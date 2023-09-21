@@ -1,0 +1,19 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+*{
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+.hero-carousel .swiper-pagination-bullet{
+  width: 13px;
+  height: 13px;
+  background-color: white !important;
+}
+.hero-carousel .swiper-pagination-bullet-active{
+  background-color: #db4444 !important;
+  border: 2px solid white;
+}
+
