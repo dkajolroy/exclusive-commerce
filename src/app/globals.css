@@ -7,6 +7,7 @@
   padding: 0;
   box-sizing: border-box;
 }
+/* Carousel Customize */
 .hero-carousel .swiper-pagination-bullet{
   width: 13px;
   height: 13px;
@@ -16,4 +17,3 @@
   background-color: #db4444 !important;
   border: 2px solid white;
 }
-

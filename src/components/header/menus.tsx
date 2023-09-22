@@ -12,7 +12,7 @@ function Menus() {
         id="navbar-search"
       >
         <MobileSearch />
-        <ul className="flex flex-col p-4 gap-3 md:p-0 mt-4 font-medium border border-gray-100 rounded-lg bg-gray-50 md:flex-row md:space-x-8 md:mt-0 md:border-0 md:bg-white dark:bg-gray-800 md:dark:bg-gray-900 dark:border-gray-700">
+        <ul className="flex flex-col p-4 gap-3 md:p-0 mt-4 font-medium border border-gray-100 rounded bg-gray-100 md:flex-row md:space-x-8 md:mt-0 md:border-0 md:bg-white dark:bg-gray-800 md:dark:bg-gray-900 dark:border-gray-700">
           {menus.map((item, index) => (
             <li key={index}>
               <Link

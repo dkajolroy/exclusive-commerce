@@ -1,11 +1,11 @@
 import Link from "next/link";
+import { IconStar } from "../assets/productIcons";
 import {
-  BagIcon,
-  CloseIcon,
-  RightLogOutIcon,
-  StarIcon,
-  UserIcon,
-} from "../assets/icons";
+  IconCloseO,
+  IconHandbag,
+  IconLogOut,
+  IconUser,
+} from "../assets/userIcons";
 
 function AccountDialog() {
   return (
@@ -20,9 +20,11 @@ function AccountDialog() {
         <li>
           <Link
             href="/"
-            className="gap-2 flex items-center px-4 py-2 text-white hover:bg-[#00000040] mx-2 rounded"
+            className="gap-2  flex items-center px-4 py-2 text-white hover:bg-[#00000040] mx-2 rounded"
           >
-            <UserIcon />
+            <span className="text-xl">
+              <IconUser />
+            </span>
             <span>Manage Account</span>
           </Link>
         </li>
@@ -31,7 +33,9 @@ function AccountDialog() {
             href="/"
             className="gap-2 flex items-center  px-4 py-2 text-white hover:bg-[#00000040] mx-2 rounded"
           >
-            <BagIcon />
+            <span className="text-xl">
+              <IconHandbag />
+            </span>
             <span>My Order</span>
           </a>
         </li>
@@ -40,7 +44,9 @@ function AccountDialog() {
             href="/"
             className="gap-2 flex items-center  px-4 py-2 text-white hover:bg-[#00000040] mx-2 rounded"
           >
-            <CloseIcon />
+            <span className="text-xl">
+              <IconCloseO />
+            </span>
             <span>My Collection</span>
           </a>
         </li>
@@ -49,7 +55,9 @@ function AccountDialog() {
             href="/"
             className="gap-2 flex items-center  px-4 py-2 text-white hover:bg-[#00000040] mx-2 rounded "
           >
-            <StarIcon />
+            <span className="text-xl">
+              <IconStar />
+            </span>
             <span>My Reviews</span>
           </a>
         </li>
@@ -59,7 +67,9 @@ function AccountDialog() {
           href="/"
           className="gap-2 flex items-center px-4 py-2 text-white text-sm  hover:bg-[#00000040] mx-2 rounded "
         >
-          <RightLogOutIcon />
+          <span className="text-xl rotate-180">
+            <IconLogOut />
+          </span>
           <span>Sign out</span>
         </a>
       </div>

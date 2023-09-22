@@ -3,7 +3,7 @@ import ListGroup from "./listgroup";
 
 function Hero() {
   return (
-    <div className="flex lg:flex-row flex-col mb-10">
+    <div className="flex lg:flex-row flex-col ">
       <div className="xl:w-[250px] lg:w-[200px] lg:block hidden w-full lg:order-1 order-2">
         <ListGroup />
       </div>

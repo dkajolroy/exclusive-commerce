@@ -4,28 +4,32 @@ import Categories from "@/components/sections/categories";
 import Explore from "@/components/sections/explore";
 import FlashSale from "@/components/sections/flashsale";
 import NewArrival from "@/components/sections/newarrival";
+import Service from "@/components/sections/service";
 
 export default function Home() {
   return (
     <main>
-      <div className="container">
+      <section className="container">
         <Hero />
-      </div>
-      <div>
+      </section>
+      <section>
         <FlashSale />
-      </div>
-      <div>
+      </section>
+      <section>
         <Categories />
-      </div>
-      <div>
+      </section>
+      <section>
         <BestSales />
-      </div>
-      <div>
+      </section>
+      <section>
         <Explore />
-      </div>
-      <div>
+      </section>
+      <section>
         <NewArrival />
-      </div>
+      </section>
+      <section>
+        <Service />
+      </section>
     </main>
   );
 }

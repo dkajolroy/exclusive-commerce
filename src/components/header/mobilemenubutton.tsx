@@ -1,4 +1,5 @@
-import { MenuBarIcon, SearchIcon } from "../assets/icons";
+import { IconSearch } from "../assets/globalIcons";
+import { IconBars } from "../assets/menuIcons";
 
 function MobileMenuButton() {
   return (
@@ -9,21 +10,19 @@ function MobileMenuButton() {
         data-collapse-toggle="navbar-search"
         aria-controls="navbar-search"
         aria-expanded="false"
-        className=" text-gray-500 dark:text-gray-400 hover:bg-gray-100 dark:hover:bg-gray-700 focus:outline-none focus:ring-4 focus:ring-gray-200 dark:focus:ring-gray-700 rounded-lg text-sm p-2.5 mr-1"
+        className=" text-gray-500 text-xl  dark:text-gray-400 hover:bg-gray-100 dark:hover:bg-gray-700 focus:outline-none focus:ring-4 focus:ring-gray-200 dark:focus:ring-gray-700 rounded-lg  p-2.5 mr-1"
       >
-        <SearchIcon />
-        <span className="sr-only">Search</span>
+        <IconSearch />
       </button>
       {/* Mobile Menu Button */}
       <button
         data-collapse-toggle="navbar-search"
         type="button"
-        className="inline-flex items-center p-2 w-10 h-10 justify-center text-sm text-gray-500 rounded-lg md:hidden hover:bg-gray-100 focus:outline-none focus:ring-2 focus:ring-gray-200 dark:text-gray-400 dark:hover:bg-gray-700 dark:focus:ring-gray-600"
+        className="inline-flex text-xl  items-center p-2 w-10 h-10 justify-center text-gray-500 rounded-lg md:hidden hover:bg-gray-100 focus:outline-none focus:ring-2 focus:ring-gray-200 dark:text-gray-400 dark:hover:bg-gray-700 dark:focus:ring-gray-600"
         aria-controls="navbar-search"
         aria-expanded="false"
       >
-        <span className="sr-only">Open main menu</span>
-        <MenuBarIcon />
+        <IconBars />
       </button>
     </div>
   );
