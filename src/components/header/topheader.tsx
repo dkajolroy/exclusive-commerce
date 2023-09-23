@@ -18,6 +18,7 @@ function TopHeader() {
             </div>
             <div>
               <select
+                name="language"
                 defaultValue="English"
                 className="  text-sm bg-black dark:text-gray-900 text-white focus:outline-none rounded-lg focus:ring-blue-500 focus:border-blue-500 block w-full p-2.5  dark:focus:ring-blue-500 dark:focus:border-blue-500"
               >

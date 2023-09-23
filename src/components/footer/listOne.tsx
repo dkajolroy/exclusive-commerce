@@ -14,7 +14,7 @@ function ListOne() {
           </span>
         </li>
         <li className="mb-4">
-          <div className="relative hover:text-gray-500 hidden md:block">
+          <div className="relative hover:text-gray-500 ">
             <input
               type="email"
               id="helper-text"

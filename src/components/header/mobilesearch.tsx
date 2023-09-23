@@ -1,4 +1,5 @@
 import { IconSearch } from "../assets/globalIcons";
+import TextInput from "../global/textInput";
 
 function MobileSearch() {
   return (
@@ -8,12 +9,7 @@ function MobileSearch() {
         <IconSearch />
       </div>
 
-      <input
-        type="text"
-        id="search-navbar"
-        className="block w-full p-2 pr-10 text-sm font-light text-gray-900 border border-gray-300  rounded bg-gray-50 focus:outline-none focus:border-gray-400 dark:bg-gray-700 dark:border-gray-300 dark:placeholder-gray-400 dark:text-white "
-        placeholder="What your are looking for ?"
-      />
+      <TextInput name="search" placeholder="What your are looking for ?" />
     </div>
   );
 }

@@ -26,9 +26,19 @@ function ProductInfo({ item }: { item: Product }) {
         {/* Colors */}
         <div className="flex items-center gap-5">
           <span className="text-black text-xl">Colors:</span>
-          <div className="flex items-center">
-            <span>color-1</span>
-            <span>color-2</span>
+          <div className="flex gap-2 items-center">
+            <button
+              type="button"
+              className="border-black p-0.5 rounded-full flex transition-all w-5 h-5 overflow-hidden border"
+            >
+              <span className="bg-primary w-full h-full rounded-full"></span>
+            </button>
+            <button
+              type="button"
+              className=" rounded-full flex transition-all w-5 h-5 overflow-hidden "
+            >
+              <span className="bg-slate-500 w-full h-full rounded-full"></span>
+            </button>
           </div>
         </div>
         {/* Sizes */}
@@ -39,7 +49,7 @@ function ProductInfo({ item }: { item: Product }) {
               <button
                 key={item}
                 type="button"
-                className="text-black uppercase font-medium text-sm rounded-md hover:text-white transition-all hover:bg-primary w-8 py-1  border "
+                className="text-black uppercase font-medium text-sm rounded-md hover:text-white transition-all hover:bg-primary hover:border-primary w-8 py-1  border "
               >
                 {item}
               </button>

@@ -10,7 +10,7 @@ function ArrivalLabel({
   return (
     <div className="relative cursor-pointer group/arrival h-full w-full ">
       <Image
-        className="w-full group-hover/arrival:brightness-90 transition-all h-full object-cover rounded brightness-75"
+        className="w-full group-hover/arrival:brightness-100 transition-all h-full object-cover rounded brightness-90"
         src={item.image}
         width={1080}
         height={1920}

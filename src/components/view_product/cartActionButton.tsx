@@ -8,7 +8,7 @@ function CartActionButton() {
         <div className="flex items-center">
           <button
             type="button"
-            className="text-black uppercase font-medium  border-gray-400 text-xlf flex justify-center items-center rounded-l-md hover:text-white transition-all hover:bg-primary w-10 p-2 h-10 border "
+            className="text-black uppercase font-medium hover:border-primary border-gray-400 text-xlf flex justify-center items-center rounded-l-md hover:text-white transition-all hover:bg-primary w-10 p-2 h-10 border "
           >
             <IconMinus />
           </button>
@@ -17,7 +17,7 @@ function CartActionButton() {
           </span>
           <button
             type="button"
-            className="text-black uppercase font-medium  border-gray-400 text-xlf flex justify-center items-center rounded-r-md hover:text-white transition-all hover:bg-primary w-10 p-2 h-10 border "
+            className="text-black uppercase font-medium hover:border-primary border-gray-400 text-xlf flex justify-center items-center rounded-r-md hover:text-white transition-all hover:bg-primary w-10 p-2 h-10 border "
           >
             <IconPlus />
           </button>
@@ -35,7 +35,7 @@ function CartActionButton() {
       <div>
         <button
           type="button"
-          className="text-gray-500 text-xl uppercase font-medium  border-gray-400 rounded-md hover:text-white transition-all hover:bg-primary px-2 h-10 border "
+          className="text-gray-500 text-xl uppercase font-medium  border-gray-400 rounded-md hover:text-white hover:border-primary transition-all hover:bg-primary px-2 h-10 border "
         >
           <IconHeart />
         </button>

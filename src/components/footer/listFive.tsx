@@ -1,3 +1,6 @@
+import DownloadFeature from "./downloadFeature";
+import SocialIcon from "./socialIcon";
+
 function ListFive() {
   return (
     <div>
@@ -6,19 +9,10 @@ function ListFive() {
       </h2>
       <ul className="text-white dark:text-gray-200 font-medium">
         <li className="mb-4">
-          <span className="text-[14px] hover:underline font-light">
-            QR Code
-          </span>
-        </li>{" "}
-        <li className="mb-4">
-          <span className="text-[14px] hover:underline font-light">
-            Apple store
-          </span>
+          <DownloadFeature />
         </li>
         <li className="mb-4">
-          <span className="text-[14px] hover:underline font-light">
-            Google play
-          </span>
+          <SocialIcon />
         </li>
       </ul>
     </div>

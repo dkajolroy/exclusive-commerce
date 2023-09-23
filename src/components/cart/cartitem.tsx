@@ -1,31 +1,70 @@
 import Image from "next/image";
+import Link from "next/link";
+import {
+  IconInstagramLogo,
+  IconLinkedinLine,
+  IconTwitterLogo,
+} from "../assets/socialIcon";
 
-function CartItem() {
+interface Props {
+  item: {
+    id: string;
+    images: string;
+    name: string;
+    coaptation: string;
+    twitter: string;
+    instagram: string;
+    linkedin: string;
+  };
+}
+function CartItem({ item }: Props) {
   return (
-    <li className="py-3 sm:py-4">
-      <div className="flex items-center space-x-4">
+    <div className="py-3 sm:py-4">
+      <div className="flex flex-col ">
         <div className="flex-shrink-0">
           <Image
-            className="w-8 h-8 rounded-full"
-            width={30}
-            height={30}
+            className="w-full h-full object-cover"
+            width={300}
+            height={500}
             src="https://res.cloudinary.com/kajolroy/image/upload/v1649315822/cld-sample.jpg"
             alt="Neil image"
           />
         </div>
-        <div className="flex-1 min-w-0">
-          <p className="text-sm font-medium text-gray-900 truncate dark:text-white">
-            Neil Sims
-          </p>
-          <p className="text-sm text-gray-500 truncate dark:text-gray-400">
-            email@windster.com
-          </p>
-        </div>
-        <div className="inline-flex items-center text-base font-semibold text-gray-900 dark:text-white">
-          $320
+        <div className="mt-5">
+          <div className="flex-1 min-w-0">
+            <h2 className="text-xl font-bold text-gray-900 truncate dark:text-white">
+              {item.name}
+            </h2>
+            <p className="text-sm text-black truncate dark:text-gray-400">
+              {item.coaptation}
+            </p>
+          </div>
+          <div className="flex gap-2 my-2 text-base font-semibold text-gray-900 dark:text-white">
+            <Link
+              href="/"
+              target="_blank"
+              className="hover:text-primary text-black"
+            >
+              <IconTwitterLogo />
+            </Link>
+            <Link
+              href="/"
+              target="_blank"
+              className="hover:text-primary text-black"
+            >
+              <IconInstagramLogo />
+            </Link>
+            <Link
+              href="/"
+              target="_blank"
+              className="hover:text-primary text-black"
+            >
+              <IconLinkedinLine />
+            </Link>
+          </div>
         </div>
       </div>
-    </li>
+    </div>
   );
 }
 

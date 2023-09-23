@@ -50,7 +50,6 @@ function ProductSlider() {
           </SwiperSlide>
         ))}
       </Swiper>
-      <button ref={navigationNextRef}>Next</button>
     </div>
   );
 }

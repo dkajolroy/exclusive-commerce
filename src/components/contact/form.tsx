@@ -1,27 +1,13 @@
+import TextInput from "../global/textInput";
 import ViewMore from "../global/viewmore";
 
 function Form() {
   return (
     <div className="flex flex-col gap-6">
       <div className="flex gap-5 items-center">
-        <input
-          type="text"
-          id="search-navbar"
-          className="block w-full p-2 pr-10 text-sm font-light text-gray-900 border border-gray-300 rounded bg-gray-50 focus:outline-none focus:border-gray-400 dark:bg-gray-700 dark:border-gray-300 dark:placeholder-gray-400 dark:text-white"
-          placeholder="Your name"
-        />
-        <input
-          type="text"
-          id="search-navbar"
-          className="block w-full p-2 pr-10 text-sm font-light text-gray-900 border border-gray-300 rounded bg-gray-50 focus:outline-none focus:border-gray-400 dark:bg-gray-700 dark:border-gray-300 dark:placeholder-gray-400 dark:text-white"
-          placeholder="Your Email"
-        />
-        <input
-          type="text"
-          id="search-navbar"
-          className="block w-full p-2 pr-10 text-sm font-light text-gray-900 border border-gray-300 rounded bg-gray-50 focus:outline-none focus:border-gray-400 dark:bg-gray-700 dark:border-gray-300 dark:placeholder-gray-400 dark:text-white"
-          placeholder="Your Phone "
-        />
+        <TextInput name="my-name" placeholder="Your name" />
+        <TextInput name="my-email" placeholder="Your Email" />
+        <TextInput name="my-phone" placeholder="Your Phone" />
       </div>
       <div>
         <textarea

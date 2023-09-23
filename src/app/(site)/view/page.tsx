@@ -22,13 +22,13 @@ function View({ searchParams }: { searchParams: { product?: string } }) {
     <>
       <div className="container md:py-20 py-5">
         <Breadcrumb />
-        <div className="grid grid-cols-1 md:py-10 py-5 md:grid-cols-5 md:gap-10">
+        <div className="grid grid-cols-1 lg:grid-cols-5 lg:gap-10">
           {/* Product Image View */}
-          <div className="md:col-span-3">
+          <div className="lg:col-span-3 lg:py-10 py-5 ">
             <ImageView item={product} />
           </div>
           {/* Product Information */}
-          <div className="md:col-span-2">
+          <div className="lg:col-span-2 lg:py-10 py-5 ">
             <ProductInfo item={product} />
           </div>
         </div>
@@ -37,12 +37,12 @@ function View({ searchParams }: { searchParams: { product?: string } }) {
           <div className="my-10">
             <SectionLabel label="Related Item" />
           </div>
-          <div className="grid grid-cols-2 md:grid-cols-4 gap-5">
+          <div className="grid grid-cols-2 md:grid-cols-3 lg:grid-cols-4 gap-5">
             {products.map((item, index) => (
               <Product
+                key={index}
                 showDiscount={true}
                 showPercentage={true}
-                key={index}
                 item={item}
               />
             ))}
