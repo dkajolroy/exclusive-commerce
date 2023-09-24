@@ -12,8 +12,8 @@ function Contact() {
       <div className="pt-10">
         <Breadcrumb />
       </div>
-      <div className="md:flex gap-5 md:my-20 my-5">
-        <div className="md:w-1/3 my-5 md:my-0 border shadow-sm p-5 rounded">
+      <div className="lg:flex gap-5 lg:my-20 my-5">
+        <div className="lg:w-1/3 my-5 lg:my-0 border shadow-sm p-5 rounded">
           <div className=" flex flex-col gap-3">
             <Label icon={<IconTelephone />} title="Call to us" />
             <span className="text-xs">
@@ -31,7 +31,7 @@ function Contact() {
             <span className="text-xs">Emails: support@exclusive.com</span>
           </div>
         </div>
-        <div className="md:w-2/3 my-5 md:my-0 border shadow-sm p-5 rounded">
+        <div className="lg:w-2/3 my-5 lg:my-0 border shadow-sm p-5 rounded">
           {/* Form */}
           <Form />
         </div>

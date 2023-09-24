@@ -1,7 +1,7 @@
 import Link from "next/link";
 import ListGroup from "../hero/listgroup";
 import DesktopSearch from "./desktopsearch";
-import HeaderButtons from "./headerbuttons";
+import IconMenus from "./iconMenus";
 import Menus from "./menus";
 import MobileMenuButton from "./mobilemenubutton";
 import TopHeader from "./topheader";
@@ -30,7 +30,7 @@ function Header() {
                 {/* Desktop Search Input*/}
                 <DesktopSearch />
               </div>
-              <HeaderButtons />
+              <IconMenus />
               <MobileMenuButton />
             </div>
             {/* All Menus */}

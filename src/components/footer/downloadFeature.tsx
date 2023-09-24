@@ -1,4 +1,4 @@
-import Image from "next/image";
+import ImageFade from "../global/imageFade";
 
 function DownloadFeature() {
   return (
@@ -9,7 +9,8 @@ function DownloadFeature() {
       <div className="flex gap-1">
         <div className="flex-1">
           <div className="flex rounded bg-gray-700">
-            <Image
+            <ImageFade
+              className="opacity-0 duration-500  transition-all"
               src="https://res.cloudinary.com/kajolroy/image/upload/v1649315822/cld-sample.jpg"
               width={100}
               height={100}

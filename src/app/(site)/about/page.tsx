@@ -1,13 +1,13 @@
 import LabelItem from "@/components/about/labelItem";
+import UserCart from "@/components/about/userCart";
 import {
   IconBxCheckShield,
   IconHeadphones,
   IconTruckFast,
 } from "@/components/assets/servicesIcons";
-import CartItem from "@/components/cart/cartitem";
+import ImageFade from "@/components/global/imageFade";
 import Service from "@/components/sections/service";
 import Breadcrumb from "@/components/view_product/breadcrumb";
-import Image from "next/image";
 
 const analysisArray = [
   {
@@ -93,8 +93,8 @@ function About() {
         </div>
         {/* Cover Image */}
         <div className="flex bg-gray-100 rounded">
-          <Image
-            className="w-full"
+          <ImageFade
+            className="w-full opacity-0 duration-500  transition-all"
             src="https://res.cloudinary.com/kajolroy/image/upload/v1649315822/cld-sample.jpg"
             width={400}
             height={500}
@@ -112,7 +112,7 @@ function About() {
       {/* User Cart Slider Section */}
       <div className="grid grid-cols-1 gap-5  lg:gap-10 md:grid-cols-3">
         {users.map((item, index) => (
-          <CartItem key={index} item={item} />
+          <UserCart key={index} item={item} />
         ))}
       </div>
 

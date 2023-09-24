@@ -12,7 +12,7 @@ function CountdownTimer() {
         } else {
           // Render a countdown
           return (
-            <div>
+            <>
               <div className="list-none flex items-center gap-5">
                 <div className="flex flex-col">
                   <span className="text-xs font-semibold">Days</span>
@@ -58,7 +58,7 @@ function CountdownTimer() {
                   </span>
                 </div>
               </div>
-            </div>
+            </>
           );
         }
       }}

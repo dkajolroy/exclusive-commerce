@@ -1,4 +1,4 @@
-import Image from "next/image";
+import ImageFade from "@/components/global/imageFade";
 
 function ArrivalLabel({
   item,
@@ -9,8 +9,8 @@ function ArrivalLabel({
 }) {
   return (
     <div className="relative cursor-pointer group/arrival h-full w-full ">
-      <Image
-        className="w-full group-hover/arrival:brightness-100 transition-all h-full object-cover rounded brightness-90"
+      <ImageFade
+        className="w-full opacity-0 duration-300 group-hover/arrival:brightness-100 transition-all h-full object-cover rounded brightness-75"
         src={item.image}
         width={1080}
         height={1920}

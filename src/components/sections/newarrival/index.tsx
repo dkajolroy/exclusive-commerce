@@ -5,12 +5,12 @@ import GridList from "./gridlist";
 function NewArrival() {
   return (
     <div className="container border-b">
-      <div className="py-10 flex flex-col gap-4">
+      <div className="flex py-5 flex-col gap-4">
         <SectionLabel label="Featured" />
         {/* Section Heading */}
         <SectionHeading title="New Arrival"></SectionHeading>
       </div>
-      <div>
+      <div className="py-5">
         <GridList />
       </div>
     </div>

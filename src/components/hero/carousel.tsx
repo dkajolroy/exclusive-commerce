@@ -1,9 +1,9 @@
 "use client";
 
 import { carousel } from "@/constants/dummy";
-import Image from "next/image";
 import { Autoplay, Pagination } from "swiper/modules";
 import { Swiper, SwiperSlide } from "swiper/react";
+import ImageFade from "../global/imageFade";
 
 function CarouselSlider() {
   return (
@@ -23,12 +23,12 @@ function CarouselSlider() {
       >
         {carousel.map((item, index) => (
           <SwiperSlide key={index}>
-            <Image
+            <ImageFade
+              className="opacity-0 duration-500 transition-all h-auto object-cover"
               src={item.image}
               width={1280}
               height={720}
               priority={true}
-              className="h-auto object-cover"
               alt="cover image"
             />
           </SwiperSlide>

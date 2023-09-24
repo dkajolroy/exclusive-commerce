@@ -1,46 +1,36 @@
+import Link from "next/link";
 import { IconHeart } from "../assets/globalIcons";
 import { IconCart3 } from "../assets/productIcons";
-import { IconUser } from "../assets/userIcons";
-import AccountDialog from "./accountDialog";
+import HandleUserDialog from "./handleUserDialog";
 
-function HeaderButtons() {
+function IconMenus() {
   return (
     <>
       <div className="hidden  w-full md:block md:w-auto" id="navbar-dropdown">
-        <div className="relative flex items-center gap-5">
+        <div className=" flex items-center gap-5">
           {/* Wishlist */}
-          <button
-            id="dropdownNavbarLink"
-            data-dropdown-toggle="dropdownNavbar"
+          <Link
+            href="/wishlist"
             className="flex text-xl items-center justify-between w-full py-2 pl-3 pr-4 text-gray-900 rounded hover:bg-gray-100 md:hover:bg-transparent md:border-0 md:hover:text-blue-700 md:p-0 md:w-auto dark:text-white md:dark:hover:text-blue-500 dark:focus:text-white dark:border-gray-700 dark:hover:bg-gray-700 md:dark:hover:bg-transparent"
           >
             <IconHeart />
-          </button>
+          </Link>
           {/* Cart */}
-          <button
-            id="dropdownNavbarLink"
-            data-dropdown-toggle="dropdownNavbar"
+          <Link
+            href="/cart"
             className="flex text-xl items-center justify-between w-full py-2 pl-3 pr-4 relative text-gray-900 rounded hover:bg-gray-100 md:hover:bg-transparent md:border-0 md:hover:text-blue-700 md:p-0 md:w-auto dark:text-white md:dark:hover:text-blue-500 dark:focus:text-white dark:border-gray-700 dark:hover:bg-gray-700 md:dark:hover:bg-transparent"
           >
             <IconCart3 />
             <div className="absolute inline-flex items-center justify-center w-[18px] h-[18px] text-xs font text-white bg-red-500 rounded-full -top-[10px] -right-[10px] dark:border-gray-900">
               2
             </div>
-          </button>
+          </Link>
           {/* User */}
-          <button
-            id="dropdownNavbarLink"
-            data-dropdown-toggle="dropdownNavbar"
-            className="flex text-xl items-center justify-center p-1 bg-orange-600 rounded-full text-white "
-          >
-            <IconUser />
-          </button>
-          {/* Account Info dropdown */}
-          <AccountDialog />
+          <HandleUserDialog />
         </div>
       </div>
     </>
   );
 }
 
-export default HeaderButtons;
+export default IconMenus;

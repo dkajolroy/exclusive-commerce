@@ -20,7 +20,7 @@ function View({ searchParams }: { searchParams: { product?: string } }) {
 
   return (
     <>
-      <div className="container md:py-20 py-5">
+      <div className="container py-10">
         <Breadcrumb />
         <div className="grid grid-cols-1 lg:grid-cols-5 lg:gap-10">
           {/* Product Image View */}

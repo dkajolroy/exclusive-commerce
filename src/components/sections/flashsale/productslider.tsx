@@ -1,23 +1,14 @@
 "use client";
 import { products } from "@/constants/dummy";
-import { useRef } from "react";
 import { Autoplay, Navigation } from "swiper/modules";
 import { Swiper, SwiperSlide } from "swiper/react";
 import Product from "../../product/index";
 
 function ProductSlider() {
-  const navigationNextRef = useRef(null);
-
   return (
-    <div className="my-5 ">
+    <>
       <Swiper
         breakpoints={{
-          // when window width is >= 480px
-          // 540: {
-          //   slidesPerView: 2,
-          //   //spaceBetween: 40,
-          // },
-          // when window width is >= 640px
           720: {
             slidesPerView: 3,
             //spaceBetween: 100,
@@ -50,7 +41,7 @@ function ProductSlider() {
           </SwiperSlide>
         ))}
       </Swiper>
-    </div>
+    </>
   );
 }
 

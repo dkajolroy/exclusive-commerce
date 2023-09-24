@@ -7,7 +7,7 @@ import { subcategories } from "@/constants/data";
 function Categories() {
   return (
     <div className="container py-10 border-b">
-      <div className="py-10 flex flex-col gap-4">
+      <div className="py-5 flex flex-col gap-4">
         <SectionLabel label="Categories" />
         {/* Section Heading */}
         <SectionHeading title="Browse By Category">

@@ -1,13 +1,18 @@
-import Image from "next/image";
 import Link from "next/link";
-import { IconEye, IconHeart } from "../assets/globalIcons";
+import { IconEye } from "../assets/globalIcons";
+import ImageFade from "../global/imageFade";
 import Rating from "../global/rating";
+import AddToCartButton from "./addToCartButton";
+import AddToWishlistButton from "./addToWishlistButton";
+import WishlistDeleteButton from "./wishlistDeleteButton";
 
 function Product({
   showDiscount,
   showPercentage,
+  cartStyle,
   item,
 }: {
+  cartStyle?: "WISHLIST" | "REGULAR";
   item: Product;
   showPercentage: boolean;
   showDiscount: boolean;
@@ -16,8 +21,8 @@ function Product({
     <div className="w-full max-w-sm bg-white  rounded">
       <div className="relative group/product">
         <Link href={{ pathname: "view", query: { product: item.id } }}>
-          <Image
-            className="w-full  object-cover h-60 rounded-t-lg group-hover/product:brightness-75 transition-all"
+          <ImageFade
+            className="w-full opacity-0 duration-500 object-cover h-60 rounded-t-lg group-hover/product:brightness-75 transition-all"
             src={item.images[0]}
             width={300}
             height={300}
@@ -39,28 +44,22 @@ function Product({
         </div>
         {/* Wishlist and view button absolute */}
         <div className="absolute top-0 right-0  z-10">
-          <div className="gap-2 p-2 flex flex-col">
-            <button
-              type="button"
-              className="text-gray-500 bg-white hover:bg-gray-300 rounded-full p-[6px] inline-flex items-center  dark:bg-gray-600 dark:hover:bg-gray-700 "
-            >
-              <IconHeart />
-            </button>
-            <Link
-              href={{ pathname: "view", query: { product: item.id } }}
-              className="text-gray-500 bg-white hover:bg-gray-300 rounded-full p-[6px] inline-flex items-center  dark:bg-gray-600 dark:hover:bg-gray-700 "
-            >
-              <IconEye />
-            </Link>
-          </div>
+          {cartStyle === "WISHLIST" ? (
+            <WishlistDeleteButton />
+          ) : (
+            <div className="gap-2 p-2 flex flex-col">
+              <AddToWishlistButton />
+              <Link
+                href={{ pathname: "view", query: { product: item.id } }}
+                className="text-gray-500 bg-white hover:bg-gray-300 rounded-full p-[6px] inline-flex items-center  dark:bg-gray-600 dark:hover:bg-gray-700 "
+              >
+                <IconEye />
+              </Link>
+            </div>
+          )}
         </div>
         {/* Add to cart absolute */}
-        <button
-          type="button"
-          className="absolute bottom-0 left-0 group-hover/product:scale-100 scale-0  py-2 text-sm font-medium text-white rounded-b focus:outline-none bg-black  hover:bg-gray-800 transition-all dark:bg-gray-800 dark:text-gray-400 w-full"
-        >
-          Add to cart
-        </button>
+        <AddToCartButton />
       </div>
       {/* Product information */}
       <div className=" pb-5">

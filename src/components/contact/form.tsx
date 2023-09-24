@@ -1,10 +1,10 @@
+import Button from "../global/button";
 import TextInput from "../global/textInput";
-import ViewMore from "../global/viewmore";
 
 function Form() {
   return (
     <div className="flex flex-col gap-6">
-      <div className="flex gap-5 items-center">
+      <div className="grid grid-cols-1 md:grid-cols-3 gap-5 items-center">
         <TextInput name="my-name" placeholder="Your name" />
         <TextInput name="my-email" placeholder="Your Email" />
         <TextInput name="my-phone" placeholder="Your Phone" />
@@ -18,7 +18,7 @@ function Form() {
         ></textarea>
       </div>
       <div className="flex justify-end">
-        <ViewMore title="Send Message" />
+        <Button title="Send Message" />
       </div>
     </div>
   );
