@@ -1,11 +1,14 @@
 import Link from "next/link";
-import ImageFade from "../global/imageFade";
+import ImageFade from "../../global/imageFade";
 
 function CartItem({ item }: { item: Product }) {
   return (
     <ul className="grid grid-cols-5 p-4 hover:bg-gray-100 rounded items-center">
-      <li className="col-span-2 flex  items-center gap-2">
-        <Link href={{ pathname: "view", query: { product: item.id } }}>
+      <li className="col-span-2 ">
+        <Link
+          className="flex  items-center gap-2 h-full"
+          href={{ pathname: "view", query: { product: item.id } }}
+        >
           <ImageFade
             className="w-12 h-12 rounded opacity-0 duration-500 transition-all"
             src={item.images[0]}
@@ -14,12 +17,9 @@ function CartItem({ item }: { item: Product }) {
             priority={true}
             alt="Cover Image"
           />
-        </Link>
-        <Link
-          href={{ pathname: "view", query: { product: item.id } }}
-          className="text-sm hover:text-primary text-black"
-        >
-          {item.title}
+          <h2 className="text-sm hover:text-primary text-black">
+            {item.title}
+          </h2>
         </Link>
       </li>
       <li className="col-span-1 text-sm">

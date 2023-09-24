@@ -3,13 +3,13 @@
 import { carousel } from "@/constants/dummy";
 import { Autoplay, Pagination } from "swiper/modules";
 import { Swiper, SwiperSlide } from "swiper/react";
-import ImageFade from "../global/imageFade";
+import ImageFade from "../../global/imageFade";
 
 function CarouselSlider() {
   return (
     <div className="hero-carousel lg:pt-8 lg:ps-8">
       <Swiper
-        spaceBetween={30}
+        spaceBetween={0}
         centeredSlides={true}
         autoplay={{
           delay: 2500,
@@ -19,7 +19,6 @@ function CarouselSlider() {
           clickable: true,
         }}
         modules={[Autoplay, Pagination]}
-        className="mySwiper"
       >
         {carousel.map((item, index) => (
           <SwiperSlide key={index}>

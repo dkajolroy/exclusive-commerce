@@ -1,8 +1,8 @@
-import Hero from "@/components/hero";
 import BestSales from "@/components/sections/bestsale";
 import Categories from "@/components/sections/categories";
 import Explore from "@/components/sections/explore";
 import FlashSale from "@/components/sections/flashsale";
+import Hero from "@/components/sections/hero";
 import NewArrival from "@/components/sections/newarrival";
 import Service from "@/components/sections/service";
 

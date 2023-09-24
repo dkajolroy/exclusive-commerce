@@ -1,5 +1,5 @@
-import Button from "../global/button";
-import TextInput from "../global/textInput";
+import Button from "../../global/button";
+import TextInput from "../../global/textInput";
 
 function Form() {
   return (

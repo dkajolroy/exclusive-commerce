@@ -1,11 +1,11 @@
-import LabelItem from "@/components/about/labelItem";
-import UserCart from "@/components/about/userCart";
 import {
   IconBxCheckShield,
   IconHeadphones,
   IconTruckFast,
 } from "@/components/assets/servicesIcons";
 import ImageFade from "@/components/global/imageFade";
+import LabelItem from "@/components/pages/about/labelItem";
+import UserCart from "@/components/pages/about/userCart";
 import Service from "@/components/sections/service";
 import Breadcrumb from "@/components/view_product/breadcrumb";
 

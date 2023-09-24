@@ -1,5 +1,5 @@
 import { categories } from "@/constants/data";
-import { ArrowRightIcon } from "../assets/menuIcons";
+import { ArrowRightIcon } from "../../assets/menuIcons";
 
 function ListGroup() {
   return (

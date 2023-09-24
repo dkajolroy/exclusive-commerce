@@ -1,5 +1,5 @@
 import Link from "next/link";
-import ListGroup from "../hero/listgroup";
+import ListGroup from "../sections/hero/listgroup";
 import DesktopSearch from "./desktopsearch";
 import IconMenus from "./iconMenus";
 import Menus from "./menus";

@@ -1,6 +1,6 @@
-import CartItem from "@/components/cart/cartItem";
 import Button from "@/components/global/button";
 import TextInput from "@/components/global/textInput";
+import CartItem from "@/components/pages/cart/cartItem";
 import Breadcrumb from "@/components/view_product/breadcrumb";
 import { products } from "@/constants/dummy";
 

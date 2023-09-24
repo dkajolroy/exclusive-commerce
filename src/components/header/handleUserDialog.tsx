@@ -23,12 +23,12 @@ function HandleUserDialog() {
           <AccountDialog />
         </div>
       </div>
-      <label
+      <div
         onClick={() => setActiveDialog(false)}
         className={`${
           !activeDialog && "hidden"
         } absolute left-0 top-0 bg-transparent h-full w-full z-10`}
-      ></label>
+      ></div>
     </>
   );
 }

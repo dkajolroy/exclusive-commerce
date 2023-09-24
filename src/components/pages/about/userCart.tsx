@@ -3,8 +3,8 @@ import {
   IconInstagramLogo,
   IconLinkedinLine,
   IconTwitterLogo,
-} from "../assets/socialIcon";
-import ImageFade from "../global/imageFade";
+} from "../../assets/socialIcon";
+import ImageFade from "../../global/imageFade";
 
 interface Props {
   item: {

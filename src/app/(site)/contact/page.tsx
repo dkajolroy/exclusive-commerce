@@ -2,8 +2,8 @@ import {
   IconEmailOutline,
   IconTelephone,
 } from "@/components/assets/contactIcon";
-import Form from "@/components/contact/form";
-import Label from "@/components/contact/label";
+import Form from "@/components/pages/contact/form";
+import Label from "@/components/pages/contact/label";
 import Breadcrumb from "@/components/view_product/breadcrumb";
 
 function Contact() {
