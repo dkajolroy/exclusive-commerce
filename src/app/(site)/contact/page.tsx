@@ -8,7 +8,7 @@ import Breadcrumb from "@/components/view_product/breadcrumb";
 
 function Contact() {
   return (
-    <div className="container">
+    <div className="container min-h-screen">
       <div className="pt-10">
         <Breadcrumb />
       </div>

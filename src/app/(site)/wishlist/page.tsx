@@ -5,7 +5,7 @@ import { products } from "@/constants/dummy";
 
 function Wishlist() {
   return (
-    <div className="container pb-20">
+    <div className="container pb-20 min-h-screen">
       {/* Breadcrumb */}
       <div className="py-10">
         <Breadcrumb />

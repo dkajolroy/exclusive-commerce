@@ -68,7 +68,7 @@ const users = [
 
 function About() {
   return (
-    <div className="container">
+    <div className="container min-h-screen">
       {/* Breadcrumb */}
       <div className="py-10">
         <Breadcrumb />

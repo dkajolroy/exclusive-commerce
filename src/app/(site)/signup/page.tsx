@@ -4,7 +4,7 @@ import Breadcrumb from "@/components/view_product/breadcrumb";
 
 function Register() {
   return (
-    <div className="container">
+    <div className="container min-h-screen">
       <div className="flex justify-between py-10">
         <Breadcrumb />
       </div>

@@ -6,7 +6,7 @@ import { products } from "@/constants/dummy";
 
 function Cart() {
   return (
-    <div className="container mb-20">
+    <div className="container mb-20  min-h-screen">
       <div className="py-10">
         <Breadcrumb />
       </div>

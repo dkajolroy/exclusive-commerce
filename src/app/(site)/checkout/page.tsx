@@ -7,7 +7,7 @@ import { products } from "@/constants/dummy";
 
 function Checkout() {
   return (
-    <div className="container pb-20">
+    <div className="container pb-20 min-h-screen">
       {/* Breadcrumb */}
       <div className="py-10">
         <Breadcrumb />
@@ -81,7 +81,7 @@ function Checkout() {
                 </div>
               </div>
               {/* Coupon */}
-              <div className="flex gap-3 ">
+              <div className="flex gap-3 items-center">
                 <div className="w-3/5">
                   <TextInput name="coupon" placeholder="Coupon Code" />
                 </div>
