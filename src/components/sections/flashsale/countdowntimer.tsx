@@ -13,10 +13,10 @@ function CountdownTimer() {
           // Render a countdown
           return (
             <>
-              <div className="list-none flex items-center gap-5">
+              <div className="list-none flex items-center md:gap-5 gap-2">
                 <div className="flex flex-col">
                   <span className="text-xs font-semibold">Days</span>
-                  <span className="text-3xl font-bold">
+                  <span className="text-xl md:text-3xl font-bold">
                     {!days
                       ? "00"
                       : days.toString().length < 2
@@ -27,7 +27,7 @@ function CountdownTimer() {
                 <span className="text-[#db4444] font-bold text-2xl">:</span>
                 <div className="flex flex-col">
                   <span className="text-xs font-semibold">Hours</span>
-                  <span className="text-3xl font-bold">
+                  <span className="text-xl md:text-3xl font-bold">
                     {!hours
                       ? "00"
                       : hours.toString().length < 2
@@ -38,7 +38,7 @@ function CountdownTimer() {
                 <span className="text-[#db4444] font-bold text-2xl">:</span>
                 <div className="flex flex-col">
                   <span className="text-xs font-semibold">Minutes</span>
-                  <span className="text-3xl font-bold">
+                  <span className="text-xl md:text-3xl font-bold">
                     {!minutes
                       ? "00"
                       : minutes.toString().length < 2
@@ -49,7 +49,7 @@ function CountdownTimer() {
                 <span className="text-[#db4444] font-bold text-2xl">:</span>
                 <div className="flex flex-col">
                   <span className="text-xs font-semibold">Seconds</span>
-                  <span className="text-3xl font-bold">
+                  <span className="text-xl md:text-3xl font-bold">
                     {!seconds
                       ? "00"
                       : seconds.toString().length < 2

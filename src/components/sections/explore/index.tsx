@@ -12,22 +12,24 @@ function Explore() {
         <SectionLabel label="Our Products" />
         {/* Section Heading */}
         <SectionHeading title="Explore Our Products">
-          <button
-            type="button"
-            className="text-black bg-gray-300 hover:bg-gray-400 focus:ring-4 focus:outline-none focus:ring-gray-300 font-medium rounded-full p-2.5 text-center inline-flex items-center mr-2 dark:bg-gray-600 dark:hover:bg-gray-700 dark:focus:ring-gray-800"
-          >
-            <IconArrowLeft />
-          </button>
-          <button
-            type="button"
-            className="text-black bg-gray-300 hover:bg-gray-400 focus:ring-4 focus:outline-none focus:ring-gray-300 font-medium rounded-full p-2.5 text-center inline-flex items-center mr-2 dark:bg-gray-600 dark:hover:bg-gray-700 dark:focus:ring-gray-800"
-          >
-            <IconArrowRight />
-          </button>
+          <div className="flex items-center gap-1 md:gap-2">
+            <button
+              type="button"
+              className=" text-black bg-gray-300 hover:bg-gray-400 focus:ring-4 focus:outline-none focus:ring-gray-300 font-medium rounded-full p-2 md:p-2.5 text-center flex items-center"
+            >
+              <IconArrowLeft />
+            </button>
+            <button
+              type="button"
+              className=" text-black bg-gray-300 hover:bg-gray-400 focus:ring-4 focus:outline-none focus:ring-gray-300 font-medium rounded-full p-2 md:p-2.5 text-center flex items-center"
+            >
+              <IconArrowRight />
+            </button>
+          </div>
         </SectionHeading>
       </div>
       {/* Product List */}
-      <div className="grid py-5 lg:grid-cols-4 md:grid-cols-3 grid-cols-2 gap-5">
+      <div className="grid py-5 lg:grid-cols-4 md:grid-cols-3 grid-cols-2 md:gap-5 gap-3">
         {products.map((item, index) => (
           <Product
             key={index}

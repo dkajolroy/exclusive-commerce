@@ -13,18 +13,20 @@ function FlashSale() {
           <SectionLabel label="Today's" />
           {/* Section Heading */}
           <SectionHeading title="Flash Sales" subItem={<CountdownTimer />}>
-            <button
-              type="button"
-              className="swiper-button-prev text-black bg-gray-300 hover:bg-gray-400 focus:ring-4 focus:outline-none focus:ring-gray-300 font-medium rounded-full  p-2.5 text-center inline-flex items-center mr-2 dark:bg-gray-600 dark:hover:bg-gray-700 dark:focus:ring-gray-800"
-            >
-              <IconArrowLeft />
-            </button>
-            <button
-              type="button"
-              className="swiper-button-next text-black bg-gray-300 hover:bg-gray-400 focus:ring-4 focus:outline-none focus:ring-gray-300 font-medium rounded-full  p-2.5 text-center inline-flex items-center mr-2 dark:bg-gray-600 dark:hover:bg-gray-700 dark:focus:ring-gray-800"
-            >
-              <IconArrowRight />
-            </button>
+            <div className="flex items-center gap-1 md:gap-2">
+              <button
+                type="button"
+                className="swiper-button-prev text-black bg-gray-300 hover:bg-gray-400 focus:ring-4 focus:outline-none focus:ring-gray-300 font-medium rounded-full p-2 md:p-2.5 text-center flex items-center"
+              >
+                <IconArrowLeft />
+              </button>
+              <button
+                type="button"
+                className="swiper-button-next text-black bg-gray-300 hover:bg-gray-400 focus:ring-4 focus:outline-none focus:ring-gray-300 font-medium rounded-full p-2 md:p-2.5 text-center flex items-center"
+              >
+                <IconArrowRight />
+              </button>
+            </div>
           </SectionHeading>
         </div>
         {/* Product List */}

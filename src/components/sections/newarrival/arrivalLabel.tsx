@@ -17,12 +17,12 @@ function ArrivalLabel({
         priority={true}
         alt="arrival item"
       />
-      <div className="absolute bottom-5 left-5 z-8 w-full">
-        <div className="gap-5 flex flex-col justify-start">
+      <div className="absolute md:bottom-5 bottom-2 left-2 md:left-5 z-8 w-full">
+        <div className="md:gap-5 gap-1 flex flex-col justify-start">
           <h2 className="text-white text-2xl ">{item.name}</h2>
           <p
             className={`text-white text-xs font-light ${
-              descCollapse && "max-w-[50%]"
+              descCollapse && "md:max-w-[50%]"
             }`}
           >
             {item.description}

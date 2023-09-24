@@ -11,15 +11,15 @@ function ProductSlider() {
         breakpoints={{
           720: {
             slidesPerView: 3,
-            //spaceBetween: 100,
+            spaceBetween: 20,
           },
           960: {
             slidesPerView: 4,
-            // spaceBetween: 40,
+            spaceBetween: 20,
           },
         }}
         slidesPerView={2}
-        spaceBetween={30}
+        spaceBetween={10}
         centeredSlides={false}
         loop={true}
         speed={700}

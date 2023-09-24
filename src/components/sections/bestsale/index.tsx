@@ -15,7 +15,7 @@ function BestSales() {
         </SectionHeading>
       </div>
       {/* Product List */}
-      <div className="grid lg:grid-cols-4 md:grid-cols-3 grid-cols-2 py-5 gap-5">
+      <div className="grid lg:grid-cols-4 md:grid-cols-3 grid-cols-2 py-5 md:gap-5 gap-3">
         {products.slice(0, 4).map((item, index) => (
           <Product
             key={index}

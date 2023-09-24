@@ -1,5 +1,6 @@
 import Footer from "@/components/footer";
 import Header from "@/components/header";
+import MobileTabMenu from "@/components/mobile/mobileTabMenu";
 import React from "react";
 
 function Layout({ children }: { children: React.ReactNode }) {
@@ -7,6 +8,7 @@ function Layout({ children }: { children: React.ReactNode }) {
     <>
       <Header />
       {children}
+      <MobileTabMenu />
       <Footer />
     </>
   );
