@@ -22,7 +22,7 @@ function Product({
       <div className="relative group/product">
         <Link href={{ pathname: "view", query: { product: item.id } }}>
           <ImageFade
-            className="w-full opacity-0 duration-500 object-cover h-40 md:h-60 rounded-t group-hover/product:brightness-75 transition-all"
+            className="w-full opacity-0 duration-500 object-cover h-40 md:h-60 rounded group-hover/product:brightness-75 transition-all"
             src={item.images[0]}
             width={300}
             height={300}

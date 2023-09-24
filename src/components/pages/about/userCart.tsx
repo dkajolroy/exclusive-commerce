@@ -23,10 +23,10 @@ function UserCart({ item }: Props) {
       <div className="flex flex-col ">
         <div className="flex-shrink-0">
           <ImageFade
-            className="opacity-0 duration-500  transition-all w-full h-full object-cover"
+            className="opacity-0 duration-500 rounded transition-all w-full h-full object-cover"
             width={300}
             height={500}
-            src="https://res.cloudinary.com/kajolroy/image/upload/v1649315822/cld-sample.jpg"
+            src="https://res.cloudinary.com/kajolroy/image/upload/v1695550795/client%20Image/man_n39uyh.jpg"
             priority={true}
             alt="Neil image"
           />

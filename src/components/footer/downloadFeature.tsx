@@ -6,22 +6,40 @@ function DownloadFeature() {
       <span className="text-xs font-light text-white">
         Save your s3 with new your only
       </span>
-      <div className="flex gap-1">
-        <div className="flex-1">
-          <div className="flex rounded bg-gray-700">
+      <div className=" flex gap-1 items-center">
+        <div className="">
+          <div className="flex rounded ">
             <ImageFade
-              className="opacity-0 duration-500  transition-all"
-              src="https://res.cloudinary.com/kajolroy/image/upload/v1649315822/cld-sample.jpg"
-              width={100}
-              height={100}
+              className="w-[450px] opacity-0 bg-white rounded duration-500  transition-all"
+              src="/info/qr_code.svg"
+              width={400}
+              height={500}
               priority={true}
-              alt="qr code"
+              alt="Cover Image"
             />
           </div>
         </div>
-        <div className="flex-1 flex flex-col">
-          <button className="text-xs py-1">Apple Store</button>
-          <button className="text-xs py-1">Google Play</button>
+        <div className=" flex flex-col">
+          <button className="text-xs py-1">
+            <ImageFade
+              className="w-full opacity-0 duration-500  transition-all"
+              src="/info/google_play.png"
+              width={400}
+              height={500}
+              priority={true}
+              alt="Cover Image"
+            />
+          </button>
+          <button className="text-xs py-1">
+            <ImageFade
+              className="w-full opacity-0 duration-500  transition-all"
+              src="/info/apple_store.png"
+              width={400}
+              height={500}
+              priority={true}
+              alt="Cover Image"
+            />
+          </button>
         </div>
       </div>
     </div>
