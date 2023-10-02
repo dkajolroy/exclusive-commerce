@@ -1,6 +1,6 @@
 import { IconArrowLeft, IconArrowRight } from "@/components/assets/menuIcons";
-import SectionHeading from "@/components/global/SectionHeading";
 import Button from "@/components/global/button";
+import SectionHeading from "@/components/global/section_Heading";
 import SectionLabel from "@/components/global/sectionlabel";
 import CountdownTimer from "./countdowntimer";
 import ProductSlider from "./productslider";

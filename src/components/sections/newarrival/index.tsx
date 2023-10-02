@@ -1,4 +1,4 @@
-import SectionHeading from "@/components/global/SectionHeading";
+import SectionHeading from "@/components/global/section_Heading";
 import SectionLabel from "@/components/global/sectionlabel";
 import GridList from "./gridlist";
 

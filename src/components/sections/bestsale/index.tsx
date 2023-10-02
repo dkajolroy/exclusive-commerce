@@ -1,5 +1,5 @@
 import Button from "@/components/global/button";
-import SectionHeading from "@/components/global/SectionHeading";
+import SectionHeading from "@/components/global/section_Heading";
 import SectionLabel from "@/components/global/sectionlabel";
 import Product from "@/components/product";
 import { products } from "@/constants/dummy";

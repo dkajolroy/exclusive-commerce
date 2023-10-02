@@ -1,6 +1,6 @@
 import { IconArrowLeft, IconArrowRight } from "@/components/assets/menuIcons";
 import { IconTruckFast } from "@/components/assets/servicesIcons";
-import SectionHeading from "@/components/global/SectionHeading";
+import SectionHeading from "@/components/global/section_Heading";
 import SectionLabel from "@/components/global/sectionlabel";
 import { subcategories } from "@/constants/data";
 
