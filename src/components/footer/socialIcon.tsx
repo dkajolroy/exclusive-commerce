@@ -1,3 +1,4 @@
+import { brandLinks } from "@/utils/default_config";
 import Link from "next/link";
 import {
   IconBxlFacebook,
@@ -6,25 +7,25 @@ import {
   IconTwitterLogo,
 } from "../assets/socialIcon";
 
-const socialLinks = [
+const social = [
   {
     icon: <IconBxlFacebook />,
-    url: "/",
+    url: brandLinks.facebook,
     name: "facebook",
   },
   {
     icon: <IconTwitterLogo />,
-    url: "/",
+    url: brandLinks.twitter,
     name: "twitter",
   },
   {
     icon: <IconInstagramLogo />,
-    url: "/",
+    url: brandLinks.instagram,
     name: "instagram",
   },
   {
     icon: <IconLinkedinLine />,
-    url: "/",
+    url: brandLinks.linkedin,
     name: "linkedin",
   },
 ];
@@ -32,7 +33,7 @@ const socialLinks = [
 function SocialIcon() {
   return (
     <div className="flex gap-5 items-center">
-      {socialLinks.map((link, i) => (
+      {social.map((link, i) => (
         <Link
           key={i}
           target="_blank"

@@ -1,3 +1,4 @@
+import { brandInfo } from "@/utils/default_config";
 import ListFive from "./listFive";
 import ListFour from "./listFour";
 import ListOne from "./listOne";
@@ -23,7 +24,8 @@ function Footer() {
         <div className="py-6 border-t border-gray-600 flex items-center justify-center">
           {/* Copyright */}
           <span className=" text-sm text-gray-500 text-center dark:text-gray-700">
-            © Copyright Kajol Roy {new Date().getFullYear()}. All right reserved
+            © Copyright {brandInfo.brandName} {new Date().getFullYear()}. All
+            right reserved
           </span>
         </div>
       </footer>

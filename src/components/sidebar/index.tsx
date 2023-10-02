@@ -3,6 +3,7 @@ import Link from "next/link";
 import { useState } from "react";
 import {
   IconCart,
+  IconCodeSandboxSquare,
   IconGear,
   IconGrid,
   IconMenubar,
@@ -98,7 +99,21 @@ const navItems = [
       },
     ],
   },
-
+  {
+    title: "Widgets",
+    pathname: "/dashboard/widgets",
+    icon: <IconCodeSandboxSquare />,
+    subItems: [
+      {
+        title: "Sliders",
+        pathname: "/dashboard/widgets/sliders",
+      },
+      {
+        title: "FAQ",
+        pathname: "/dashboard/widgets/faq",
+      },
+    ],
+  },
   {
     title: "Users",
     pathname: "/dashboard/users",

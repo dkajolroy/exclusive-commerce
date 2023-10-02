@@ -5,7 +5,7 @@ import ImageView from "@/components/view_product/imageView";
 import ProductInfo from "@/components/view_product/productInfo";
 import { products } from "../../../constants/dummy";
 
-function View({ searchParams }: { searchParams: { product?: string } }) {
+async function View({ searchParams }: { searchParams: { product?: string } }) {
   //  find product by view id
   const product = products.find((p) => p.id === searchParams.product);
   //  Render not found

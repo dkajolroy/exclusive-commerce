@@ -1,7 +1,7 @@
 "use client";
 import Link from "next/link";
 import { useState } from "react";
-import { IconArrowDown, IconCart } from "../assets/dashboardIcon";
+import { IconArrowDown } from "../assets/dashboardIcon";
 
 interface Props {
   item: {
@@ -27,9 +27,9 @@ function DropdownItem({ item, pathname }: Props) {
           pathname.startsWith(item.pathname) && "bg-gray-200"
         } flex items-center w-full p-2 text-base text-gray-900 transition duration-75 rounded-lg group hover:bg-gray-100 dark:text-white dark:hover:bg-gray-700`}
       >
-        <IconCart />
+        {item.icon}
         <span className="flex-1 ml-3 text-left whitespace-nowrap">
-          E-commerce
+          {item.title}
         </span>
         <IconArrowDown />
       </button>
