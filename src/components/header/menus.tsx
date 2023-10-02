@@ -28,6 +28,20 @@ function Menus() {
               </Link>
             </li>
           ))}
+          {/* Categories */}
+          <li>
+            <Link
+              href="/"
+              className={`block md:hidden relative hover:after:scale-100 ${
+                pathname === "/categories"
+                  ? "md:after:scale-100 after:scale-0 bg-gray-300  md:bg-inherit"
+                  : "after:scale-0"
+              } after:absolute after:bottom-0 after:left-0 after:h-[1px] after:w-full after:bg-gray-400  after:transition-all py-2 pl-3 pr-4 text-black  rounded md:bg-transparent md:p-0 `}
+              aria-current="page"
+            >
+              Categories
+            </Link>
+          </li>
         </ul>
       </div>
     </>

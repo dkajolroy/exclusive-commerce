@@ -1,4 +1,5 @@
 import Link from "next/link";
+import { ArrowRightIcon } from "../assets/menuIcons";
 import ListGroup from "../sections/hero/listgroup";
 import DesktopSearch from "./desktopsearch";
 import IconMenus from "./iconMenus";
@@ -20,8 +21,13 @@ function Header() {
             </Link>
             <div className="flex md:order-2 justify-between md:mt-2 md:w-full lg:w-auto gap-7 items-center flex-wrap ">
               {/* Mobile category list */}
-              <div className="lg:hidden relative group/category">
-                <span className="cursor-pointer ">Category</span>
+              <div className="lg:hidden relative group/category md:block hidden">
+                <div className="cursor-pointer flex items-center gap-2  group-hover/category:gap-3 transition-all">
+                  <span>Category </span>
+                  <span className="rotate-90">
+                    <ArrowRightIcon />
+                  </span>
+                </div>
                 <div className="absolute top-full hidden group-hover/category:block z-20 left-0 w-[220px] py-2 rounded bg-white">
                   <ListGroup />
                 </div>

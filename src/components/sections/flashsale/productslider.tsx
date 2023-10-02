@@ -24,7 +24,7 @@ function ProductSlider() {
         loop={true}
         speed={700}
         autoplay={{
-          delay: 2500,
+          delay: 5000,
           disableOnInteraction: false,
           pauseOnMouseEnter: true,
         }}
