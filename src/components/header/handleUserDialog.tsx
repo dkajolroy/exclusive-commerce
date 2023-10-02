@@ -1,7 +1,7 @@
 "use client";
 import { useState } from "react";
 import { IconUser } from "../assets/userIcons";
-import AccountDialog from "./accountDialog";
+import AccountDialog from "./AccountDialog";
 
 function HandleUserDialog() {
   const [activeDialog, setActiveDialog] = useState(false);

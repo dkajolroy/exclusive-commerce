@@ -1,6 +1,6 @@
 import { IconArrowLeft, IconArrowRight } from "@/components/assets/menuIcons";
 import Button from "@/components/global/button";
-import SectionHeading from "@/components/global/sectionHeading";
+import SectionHeading from "@/components/global/SectionHeading";
 import SectionLabel from "@/components/global/sectionlabel";
 import Product from "@/components/product";
 import { products } from "@/constants/dummy";
