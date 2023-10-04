@@ -1,7 +1,7 @@
 "use client";
 import Link from "next/link";
 import { useState } from "react";
-import { IconArrowDown } from "../assets/dashboardIcon";
+import { IconArrowDown } from "../../assets/dashboardIcon";
 
 interface Props {
   item: {

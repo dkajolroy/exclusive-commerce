@@ -8,8 +8,8 @@ import {
   IconGrid,
   IconMenubar,
   IconUsers,
-} from "../assets/dashboardIcon";
-import { IconLogOut } from "../assets/userIcons";
+} from "../../assets/dashboardIcon";
+import { IconLogOut } from "../../assets/userIcons";
 import NavItem from "./navItem";
 function Sidebar() {
   const [sidebarCollapse, setSidebarCollapse] = useState(false);

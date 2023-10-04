@@ -1,5 +1,5 @@
-import Sidebar from "@/components/sidebar";
-import TopBar from "@/components/topbar";
+import Sidebar from "@/components/dashboard/sidebar";
+import TopBar from "@/components/dashboard/topbar";
 import React from "react";
 
 function Layout({ children }: { children: React.ReactNode }) {
