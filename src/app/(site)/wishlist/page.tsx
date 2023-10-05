@@ -1,14 +1,26 @@
+import { IconHome } from "@/components/assets/menuIcons";
+import Breadcrumb from "@/components/global/breadcrumb";
 import Button from "@/components/global/button";
 import Product from "@/components/product";
-import Breadcrumb from "@/components/view_product/breadcrumb";
 import { products } from "@/constants/dummy";
-
+const breadcrumb = [
+  {
+    title: "Home",
+    icon: <IconHome />,
+    pathname: "/",
+  },
+  {
+    title: "Wishlist",
+    icon: null,
+    pathname: null,
+  },
+];
 function Wishlist() {
   return (
     <div className="container pb-20 min-h-screen">
       {/* Breadcrumb */}
       <div className="py-10">
-        <Breadcrumb />
+        <Breadcrumb crumb={breadcrumb} />
       </div>
 
       {/* Recommended  items*/}

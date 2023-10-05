@@ -1,12 +1,24 @@
+import { IconHome } from "@/components/assets/menuIcons";
+import Breadcrumb from "@/components/global/breadcrumb";
 import ImageFade from "@/components/global/imageFade";
 import RegisterForm from "@/components/pages/auth/registerForm";
-import Breadcrumb from "@/components/view_product/breadcrumb";
-
+const breadcrumb = [
+  {
+    title: "Home",
+    icon: <IconHome />,
+    pathname: "/",
+  },
+  {
+    title: "Sign up",
+    icon: null,
+    pathname: null,
+  },
+];
 function Register() {
   return (
     <div className="container min-h-screen">
       <div className="flex justify-between py-10">
-        <Breadcrumb />
+        <Breadcrumb crumb={breadcrumb} />
       </div>
       <div className="grid md:grid-cols-7 lg:grid-cols-3 gap-5 items-center pb-20">
         <div className="col-span-2 lg:col-span-2 md:col-span-4">

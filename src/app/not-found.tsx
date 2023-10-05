@@ -1,14 +1,29 @@
+import { IconHome } from "@/components/assets/menuIcons";
 import Footer from "@/components/footer";
+import Breadcrumb from "@/components/global/breadcrumb";
 import Header from "@/components/header";
-import Breadcrumb from "@/components/view_product/breadcrumb";
 import Link from "next/link";
+
+const breadcrumb = [
+  {
+    title: "Home",
+    icon: <IconHome />,
+    pathname: "/",
+  },
+  {
+    title: "Not found",
+    icon: null,
+    pathname: null,
+  },
+];
+
 function NotFound() {
   return (
     <>
       <Header />
       <div className="container ">
         <div className="mt-10">
-          <Breadcrumb />
+          <Breadcrumb crumb={breadcrumb} />
         </div>
         <div className="flex flex-col min-h-[85vh] items-center justify-center lg:gap-10 gap-5">
           <h2 className="lg:text-6xl text-4xl font-medium text-black text-center">

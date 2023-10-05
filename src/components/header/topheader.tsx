@@ -1,3 +1,4 @@
+import Link from "next/link";
 function TopHeader() {
   return (
     <div className="bg-black  dark:bg-white">
@@ -8,12 +9,12 @@ function TopHeader() {
               <span className="sm:text-sm text-xs text-gray-300 sm:text-center dark:text-gray-500">
                 Summer Sale For All Swim Suits And Free Express Delivery - OFF
                 50%!
-                <a
-                  href="https://flowbite.com/"
+                <Link
+                  href="/shop"
                   className="hover:underline ms-2 underline font-bold"
                 >
                   ShopNow
-                </a>
+                </Link>
               </span>
             </div>
             <div>

@@ -1,16 +1,28 @@
+import { IconHome } from "@/components/assets/menuIcons";
+import Breadcrumb from "@/components/global/breadcrumb";
 import Button from "@/components/global/button";
 import TextInput from "@/components/global/textInput";
 import CartItem from "@/components/pages/cart/cartItem";
-import Breadcrumb from "@/components/view_product/breadcrumb";
 import { products } from "@/constants/dummy";
-
+const breadcrumb = [
+  {
+    title: "Home",
+    icon: <IconHome />,
+    pathname: "/",
+  },
+  {
+    title: "Cart",
+    icon: null,
+    pathname: null,
+  },
+];
 function Cart() {
   return (
     <div className="container mb-20  min-h-screen">
       <div className="py-10">
-        <Breadcrumb />
+        <Breadcrumb crumb={breadcrumb} />
       </div>
-      <div className="py-5">
+      <div>
         {/* Heading */}
         <ul className="grid grid-cols-5 p-4 items-center">
           <li className="col-span-2 text-sm">Product</li>

@@ -1,7 +1,7 @@
 import { IconArrowLeft, IconArrowRight } from "@/components/assets/menuIcons";
-import Button from "@/components/global/button";
 import SectionHeading from "@/components/global/section_Heading";
 import SectionLabel from "@/components/global/sectionlabel";
+import Link from "next/link";
 import CountdownTimer from "./countdowntimer";
 import ProductSlider from "./productslider";
 
@@ -34,7 +34,12 @@ function FlashSale() {
           <ProductSlider />
         </div>
         <div className="flex justify-center">
-          <Button title="View All Products" />
+          <Link
+            className={` text-white border border-gray-300 bg-primary md:px-8 px-3 rounded hover:brightness-90 transition-all text-xs py-2 md:py-3 focus:outline-none`}
+            href="/shop"
+          >
+            View All Products
+          </Link>
         </div>
       </div>
     </>

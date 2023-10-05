@@ -2,15 +2,27 @@ import {
   IconEmailOutline,
   IconTelephone,
 } from "@/components/assets/contactIcon";
+import { IconHome } from "@/components/assets/menuIcons";
+import Breadcrumb from "@/components/global/breadcrumb";
 import Form from "@/components/pages/contact/form";
 import Label from "@/components/pages/contact/label";
-import Breadcrumb from "@/components/view_product/breadcrumb";
-
+const breadcrumb = [
+  {
+    title: "Home",
+    icon: <IconHome />,
+    pathname: "/",
+  },
+  {
+    title: "Contact",
+    icon: null,
+    pathname: null,
+  },
+];
 function Contact() {
   return (
     <div className="container min-h-screen">
       <div className="pt-10">
-        <Breadcrumb />
+        <Breadcrumb crumb={breadcrumb} />
       </div>
       <div className="lg:flex gap-5 lg:my-20 my-5">
         <div className="lg:w-1/3 my-5 lg:my-0 border shadow-sm p-5 rounded">

@@ -1,13 +1,14 @@
+import { IconHome } from "@/components/assets/menuIcons";
 import {
   IconBxCheckShield,
   IconHeadphones,
   IconTruckFast,
 } from "@/components/assets/servicesIcons";
+import Breadcrumb from "@/components/global/breadcrumb";
 import ImageFade from "@/components/global/imageFade";
 import LabelItem from "@/components/pages/about/labelItem";
 import UserCart from "@/components/pages/about/userCart";
 import Service from "@/components/sections/service";
-import Breadcrumb from "@/components/view_product/breadcrumb";
 
 const analysisArray = [
   {
@@ -65,13 +66,25 @@ const users = [
     linkedin: "/",
   },
 ];
+const breadcrumb = [
+  {
+    title: "Home",
+    icon: <IconHome />,
+    pathname: "/",
+  },
+  {
+    title: "About",
+    icon: null,
+    pathname: null,
+  },
+];
 
 function About() {
   return (
     <div className="container min-h-screen">
       {/* Breadcrumb */}
       <div className="py-10">
-        <Breadcrumb />
+        <Breadcrumb crumb={breadcrumb} />
       </div>
 
       {/* Story Section */}
