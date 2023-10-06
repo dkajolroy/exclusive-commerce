@@ -8,14 +8,16 @@
   box-sizing: border-box;
 }
 
-
-/* Carousel Customize */
-.hero-carousel .swiper-pagination-bullet{
-  width: 13px;
-  height: 13px;
-  background-color: white !important;
+/* Carousel Dot customize */
+.react-multi-carousel-dot button{
+  width: 12px;
+  height: 12px;
+  background-color: gray !important;
+  border:1px solid transparent
 }
-.hero-carousel .swiper-pagination-bullet-active{
+.react-multi-carousel-dot--active button{
+  width: 14px;
+  height: 14px;
   background-color: #db4444 !important;
   border: 2px solid white;
 }

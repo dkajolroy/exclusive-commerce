@@ -1,6 +1,5 @@
-import Slider from "@/components/global/slider";
+import Slider from "@/components/sections/hero/slider";
 import { getCarouselSSG } from "@/hooks/getCarousel";
-import CarouselSlider from "./carousel";
 import ListGroup from "./listgroup";
 
 async function Hero() {
@@ -13,11 +12,10 @@ async function Hero() {
           <ListGroup />
         </div>
         <div className="xl:w-[calc(100%-250px)] lg:w-[calc(100%-200px)] lg:order-2 order-1 w-full">
-          <CarouselSlider carousels={carousel} />
+          {/* <CarouselSlider carousels={carousel} /> */}
+          <Slider carousels={carousel} />
         </div>
       </div>
-      {/* Text SSR */}
-      <Slider carousels={carousel} />
     </>
   );
 }
