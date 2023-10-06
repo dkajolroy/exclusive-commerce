@@ -7,6 +7,7 @@ function ImageFade(props: ImageProps) {
       <Image
         {...props}
         onLoadingComplete={(img) => img.classList.remove("opacity-0")}
+        alt={props.alt || "item image"}
       />
     </>
   );
