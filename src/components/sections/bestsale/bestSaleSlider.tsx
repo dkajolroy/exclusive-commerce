@@ -1,9 +1,11 @@
 "use client";
+import { useProducts } from "@/hooks/useProduct";
 import { Autoplay, Navigation } from "swiper/modules";
 import { Swiper, SwiperSlide } from "swiper/react";
 import Product from "../../product/index";
 
-function BestSaleSlider({ products }: { products: Product[] }) {
+function BestSaleSlider() {
+  const { products } = useProducts("/api/products?type=best_sale");
   return (
     <Swiper
       breakpoints={{

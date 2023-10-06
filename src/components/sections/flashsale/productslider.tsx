@@ -1,9 +1,11 @@
 "use client";
+import { useProducts } from "@/hooks/useProduct";
 import { Autoplay, Navigation } from "swiper/modules";
 import { Swiper, SwiperSlide } from "swiper/react";
 import Product from "../../product/index";
 
-function ProductSlider({ products }: { products: Product[] }) {
+function ProductSlider() {
+  const { products } = useProducts("/api/products?type=flash_sale");
   return (
     <>
       <Swiper
@@ -28,8 +30,8 @@ function ProductSlider({ products }: { products: Product[] }) {
           pauseOnMouseEnter: true,
         }}
         navigation={{
-          nextEl: ".swiper-button-next",
-          prevEl: ".swiper-button-prev",
+          nextEl: ".swiper-flash-next",
+          prevEl: ".swiper-flash-prev",
         }}
         modules={[Autoplay, Navigation]}
         className="slider"

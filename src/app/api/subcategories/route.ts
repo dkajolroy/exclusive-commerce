@@ -6,7 +6,7 @@ export async function GET(req: NextRequest) {
     const response = await prisma.subcategory.findMany();
     return NextResponse.json({
       success: true,
-      subcategory: response,
+      subcategories: response,
       message: "Success fetch !",
     });
   } catch (error: any) {
