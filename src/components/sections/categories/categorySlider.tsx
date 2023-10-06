@@ -1,52 +1,75 @@
 "use client";
-import { useSubcategories } from "@/hooks/useSubcategories";
-import { Autoplay, Navigation } from "swiper/modules";
-import { Swiper, SwiperSlide } from "swiper/react";
+import CarouselSlide, { ResponsiveType } from "react-multi-carousel";
 
-function CategorySlider() {
-  const { subcategories } = useSubcategories("/api/subcategories");
-
+function FlashSlider({ subcategories }: { subcategories: Subcategory[] }) {
   return (
-    <Swiper
-      breakpoints={{
-        420: {
-          slidesPerView: 3,
-          spaceBetween: 20,
-        },
-        960: {
-          slidesPerView: 6,
-          spaceBetween: 20,
-        },
-      }}
-      slidesPerView={2}
-      spaceBetween={10}
-      centeredSlides={false}
-      loop={true}
-      speed={700}
-      autoplay={{
-        delay: 5000,
-        disableOnInteraction: false,
-        pauseOnMouseEnter: true,
-      }}
-      navigation={{
-        nextEl: ".swiper-category-next",
-        prevEl: ".swiper-category-prev",
-      }}
-      modules={[Autoplay, Navigation]}
-      className="slider"
+    <CarouselSlide
+      additionalTransfrom={0}
+      arrows={false}
+      autoPlay
+      autoPlaySpeed={5000}
+      centerMode={false}
+      containerClass="lg:pt-8 lg:ms-8 relative"
+      dotListClass="p-5"
+      focusOnSelect={false}
+      infinite
+      keyBoardControl
+      minimumTouchDrag={80}
+      pauseOnHover
+      renderArrowsWhenDisabled={false}
+      renderButtonGroupOutside={false}
+      renderDotsOutside={false}
+      rewind={false}
+      rewindWithAnimation={false}
+      rtl={false}
+      shouldResetAutoplay
+      showDots={false}
+      sliderClass="h-full "
+      itemClass="pr-5"
+      slidesToSlide={1}
+      swipeable={false}
+      draggable={false}
+      responsive={responsive}
+      ssr
+      deviceType={"desktop"}
     >
       {subcategories.map((item, index) => (
-        <SwiperSlide key={index}>
-          <div className="border flex  items-center  group/subcategory_b gap-2 md:gap-5 justify-center flex-col cursor-pointer hover:bg-primary bg-white hover:text-white transition-all rounded md:p-5 p-2">
-            <span className="text-5xl">
-              <i className={item.icon}></i>
-            </span>
-            <h2 className="text-center font-medium">{item.name}</h2>
-          </div>
-        </SwiperSlide>
+        <div
+          key={index}
+          className="border flex  items-center  group/subcategory_b gap-2 md:gap-5 justify-center flex-col cursor-pointer hover:bg-primary bg-white hover:text-white transition-all rounded md:p-5 p-2"
+        >
+          <span className="text-5xl">
+            <i className={item.icon}></i>
+          </span>
+          <h2 className="text-center font-medium">{item.name}</h2>
+        </div>
       ))}
-    </Swiper>
+    </CarouselSlide>
   );
 }
 
-export default CategorySlider;
+export default FlashSlider;
+
+const responsive: ResponsiveType = {
+  desktop: {
+    breakpoint: {
+      max: 3000,
+      min: 1024,
+    },
+    items: 6,
+  },
+  mobile: {
+    breakpoint: {
+      max: 464,
+      min: 0,
+    },
+    items: 2,
+  },
+  tablet: {
+    breakpoint: {
+      max: 1024,
+      min: 464,
+    },
+    items: 4,
+  },
+};

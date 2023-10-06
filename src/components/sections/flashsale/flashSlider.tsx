@@ -1,8 +1,8 @@
 "use client";
-import CarouselSlide from "react-multi-carousel";
-import ImageFade from "../../global/imageFade";
+import Product from "@/components/product";
+import CarouselSlide, { ResponsiveType } from "react-multi-carousel";
 
-function Slider({ carousels }: { carousels: Carousel[] }) {
+function FlashSlider({ products }: { products: Product[] }) {
   return (
     <CarouselSlide
       additionalTransfrom={0}
@@ -24,8 +24,9 @@ function Slider({ carousels }: { carousels: Carousel[] }) {
       rewindWithAnimation={false}
       rtl={false}
       shouldResetAutoplay
-      showDots
+      showDots={false}
       sliderClass="h-full "
+      itemClass="pr-5"
       slidesToSlide={1}
       swipeable={false}
       draggable={false}
@@ -33,43 +34,40 @@ function Slider({ carousels }: { carousels: Carousel[] }) {
       ssr
       deviceType={"desktop"}
     >
-      {carousels.map((item, i) => (
-        <ImageFade
-          key={i}
-          className="opacity-0 duration-500 transition-all h-auto object-cover"
-          priority={true}
-          alt="cover image"
-          src={item.image}
-          width={1280}
-          height={720}
+      {products.map((item, index) => (
+        <Product
+          key={index}
+          item={item}
+          showPercentage={false}
+          showDiscount={true}
         />
       ))}
     </CarouselSlide>
   );
 }
 
-export default Slider;
+export default FlashSlider;
 
-const responsive = {
+const responsive: ResponsiveType = {
   desktop: {
     breakpoint: {
       max: 3000,
       min: 1024,
     },
-    items: 1,
+    items: 4,
   },
   mobile: {
     breakpoint: {
       max: 464,
       min: 0,
     },
-    items: 1,
+    items: 2,
   },
   tablet: {
     breakpoint: {
       max: 1024,
       min: 464,
     },
-    items: 1,
+    items: 3,
   },
 };
