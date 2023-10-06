@@ -5,7 +5,7 @@ import Link from "next/link";
 import CountdownTimer from "./countdowntimer";
 import ProductSlider from "./productslider";
 
-async function FlashSale() {
+function FlashSale() {
   return (
     <>
       <div className="container py-10 border-b">

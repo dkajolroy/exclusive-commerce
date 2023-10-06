@@ -1,12 +1,11 @@
 "use client";
 
-import { useCarousel } from "@/hooks/useCarousel";
 import { Autoplay, Pagination } from "swiper/modules";
 import { Swiper, SwiperSlide } from "swiper/react";
 import ImageFade from "../../global/imageFade";
 
-function CarouselSlider() {
-  const { carousels } = useCarousel("/api/carousel");
+function CarouselSlider({ carousels }: { carousels: Carousel[] }) {
+  // const { carousels } = useCarousel("/api/carousel");
   return (
     <div className="hero-carousel lg:pt-8 lg:ps-8">
       <Swiper
