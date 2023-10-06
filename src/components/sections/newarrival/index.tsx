@@ -12,7 +12,7 @@ async function NewArrival() {
       <div className="flex py-5 flex-col gap-4">
         <SectionLabel label="Featured" />
         {/* Section Heading */}
-        <SectionHeading title="New Arrival"></SectionHeading>
+        <SectionHeading title="New Arrival" />
       </div>
       <div className="py-5">
         {arrival.length && arrival.length > 3 && (

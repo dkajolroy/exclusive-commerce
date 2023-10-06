@@ -65,22 +65,23 @@ function Pagination({
           </Link>
         </li>
         {/* Page + 1 */}
-        {lastPage !== 1 && (
-          <li>
-            <Link
-              href={{
-                pathname: "/shop",
-                query: {
-                  page: page + 1 || 3,
-                  limit,
-                },
-              }}
-              className="flex items-center justify-center px-4 h-10 leading-tight text-gray-300 bg-gray-800 border border-white hover:bg-gray-700 hover:text-gray-200 dark:bg-gray-800 dark:border-gray-700 dark:text-gray-300 dark:hover:bg-gray-700 dark:hover:text-white"
-            >
-              {page + 1 || 3}
-            </Link>
-          </li>
-        )}
+        {lastPage !== 1 ||
+          (page + 1 !== lastPage && (
+            <li>
+              <Link
+                href={{
+                  pathname: "/shop",
+                  query: {
+                    page: page + 1 || 3,
+                    limit,
+                  },
+                }}
+                className="flex items-center justify-center px-4 h-10 leading-tight text-gray-300 bg-gray-800 border border-white hover:bg-gray-700 hover:text-gray-200 dark:bg-gray-800 dark:border-gray-700 dark:text-gray-300 dark:hover:bg-gray-700 dark:hover:text-white"
+              >
+                {page + 1 || 3}
+              </Link>
+            </li>
+          ))}
         {/* page + 10 */}
         {lastPage > page + 10 && (
           <li>

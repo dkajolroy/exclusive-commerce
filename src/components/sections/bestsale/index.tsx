@@ -1,14 +1,9 @@
 import { IconArrowLeft, IconArrowRight } from "@/components/assets/menuIcons";
 import SectionHeading from "@/components/global/section_Heading";
 import SectionLabel from "@/components/global/sectionlabel";
-import { getProducts } from "@/hooks/getProducts";
 import BestSaleSlider from "./bestSaleSlider";
 
-async function BestSales() {
-  // Get SSR Products
-  const url = `${process.env.NEXTAUTH_URL}/api/products?type=best_sale`; // change sale type
-  const { products } = await getProducts(url);
-
+function BestSales() {
   return (
     <div className="container py-10 border-b">
       <div className="py-5 flex flex-col gap-4">
@@ -33,7 +28,7 @@ async function BestSales() {
       </div>
       {/* Product List */}
       <div className="py-5">
-        <BestSaleSlider products={products} />
+        <BestSaleSlider />
       </div>
     </div>
   );

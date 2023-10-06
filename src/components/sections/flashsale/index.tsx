@@ -1,16 +1,11 @@
 import { IconArrowLeft, IconArrowRight } from "@/components/assets/menuIcons";
 import SectionHeading from "@/components/global/section_Heading";
 import SectionLabel from "@/components/global/sectionlabel";
-import { getProducts } from "@/hooks/getProducts";
 import Link from "next/link";
 import CountdownTimer from "./countdowntimer";
 import ProductSlider from "./productslider";
 
 async function FlashSale() {
-  // Get SSR Products
-  const url = `${process.env.NEXTAUTH_URL}/api/products?type=flash_sale`; // change sale type
-  const { products } = await getProducts(url);
-
   return (
     <>
       <div className="container py-10 border-b">
@@ -36,7 +31,7 @@ async function FlashSale() {
         </div>
         {/* Product List */}
         <div className="py-5">
-          <ProductSlider products={products} />
+          <ProductSlider />
         </div>
         <div className="flex justify-center">
           <Link
