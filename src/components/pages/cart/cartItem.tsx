@@ -1,7 +1,7 @@
 import Link from "next/link";
 import ImageFade from "../../global/imageFade";
 
-function CartItem({ item }: { item: Product }) {
+function CartItem({ item }: { item: CartList }) {
   return (
     <ul className="grid grid-cols-5 p-4 hover:bg-gray-100 rounded items-center">
       <li className="col-span-2 ">
@@ -11,19 +11,19 @@ function CartItem({ item }: { item: Product }) {
         >
           <ImageFade
             className="w-12 h-12 rounded opacity-0 duration-500 transition-all"
-            src={item.images[0]}
+            src={item.product.images[0]}
             width={50}
             height={50}
             priority={true}
             alt="Cover Image"
           />
           <h2 className="text-sm hover:text-primary text-black">
-            {item.title}
+            {item.product.title}
           </h2>
         </Link>
       </li>
       <li className="col-span-1 text-sm">
-        <span className="text-sm">${item.regularPrice}</span>
+        <span className="text-sm">${item.product.regularPrice}</span>
       </li>
       <li className="col-span-1 text-sm">
         <select
@@ -39,7 +39,7 @@ function CartItem({ item }: { item: Product }) {
         </select>
       </li>
       <li className="col-span-1 text-sm">
-        <span className="text-sm">${item.regularPrice}</span>
+        <span className="text-sm">${item.product.regularPrice}</span>
       </li>
     </ul>
   );

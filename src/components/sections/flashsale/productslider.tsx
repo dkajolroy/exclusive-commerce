@@ -1,10 +1,9 @@
 "use client";
-import { products } from "@/constants/dummy";
 import { Autoplay, Navigation } from "swiper/modules";
 import { Swiper, SwiperSlide } from "swiper/react";
 import Product from "../../product/index";
 
-function ProductSlider() {
+function ProductSlider({ products }: { products: Product[] }) {
   return (
     <>
       <Swiper

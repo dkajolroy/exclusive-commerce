@@ -9,7 +9,7 @@ export async function GET(req: NextRequest) {
   } catch (error: any) {
     return NextResponse.json({
       success: false,
-      message: error.message || "Something went wrong !",
+      message: "Something went wrong !",
     });
   }
 }

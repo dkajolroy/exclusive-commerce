@@ -66,7 +66,9 @@ function Product({
         {/* Title */}
         <Link href={{ pathname: "view", query: { product: item.id } }}>
           <h5 className=" font-semibold tracking-tight text-gray-900 dark:text-white">
-            {item.title}
+            {item.title.length > 20
+              ? `${item.title.slice(0, 32)}...`
+              : item.title}
           </h5>
         </Link>
         {/* Price and Discount */}

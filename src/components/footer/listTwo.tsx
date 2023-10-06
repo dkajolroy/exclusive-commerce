@@ -1,4 +1,4 @@
-import { brandInfo } from "@/utils/default_config";
+import { brandInfo } from "@/constants/default_config";
 
 function ListTwo() {
   return (

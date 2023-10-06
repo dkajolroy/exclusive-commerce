@@ -1,11 +1,10 @@
 "use client";
 
-import { carousel } from "@/constants/dummy";
 import { Autoplay, Pagination } from "swiper/modules";
 import { Swiper, SwiperSlide } from "swiper/react";
 import ImageFade from "../../global/imageFade";
 
-function CarouselSlider() {
+function CarouselSlider({ carouselList }: { carouselList: Carousel[] }) {
   return (
     <div className="hero-carousel lg:pt-8 lg:ps-8">
       <Swiper
@@ -20,7 +19,7 @@ function CarouselSlider() {
         }}
         modules={[Autoplay, Pagination]}
       >
-        {carousel.map((item, index) => (
+        {carouselList.map((item, index) => (
           <SwiperSlide key={index}>
             <ImageFade
               className="opacity-0 duration-500 transition-all h-auto object-cover"

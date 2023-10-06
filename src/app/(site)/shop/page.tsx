@@ -1,22 +1,32 @@
 import { IconHome } from "@/components/assets/menuIcons";
 import Breadcrumb from "@/components/global/breadcrumb";
-import Button from "@/components/global/button";
 import Pagination from "@/components/global/pagination";
 import Product from "@/components/product";
-import { products } from "@/constants/dummy";
-const breadcrumb = [
-  {
-    title: "Home",
-    icon: <IconHome />,
-    pathname: "/",
-  },
-  {
-    title: "Products",
-    icon: null,
-    pathname: null,
-  },
-];
-function Shop() {
+import { getProducts } from "@/hooks/getProducts";
+
+interface Props {
+  searchParams: {
+    limit?: string;
+    page?: string;
+  };
+}
+async function Shop({ searchParams }: Props) {
+  // Url limit Edit protected up to 40
+  const limit =
+    parseInt(searchParams.limit || "16") > 40
+      ? 16
+      : parseInt(searchParams.limit || "16");
+  // Current pages
+  const page = parseInt(searchParams.page || "1");
+
+  // get SSR data with pagination
+  var url = `${process.env.NEXTAUTH_URL}/api/products?limit=${
+    limit || 16
+  }&page=${page || 1}`;
+
+  // SSR Get Data
+  const { products, total } = await getProducts(url);
+
   return (
     <div className="container py-10 min-h-screen">
       <Breadcrumb crumb={breadcrumb} />
@@ -46,14 +56,37 @@ function Shop() {
           />
         ))}
       </div>
-      <div className="flex md:flex-row gap-5 flex-col justify-between items-center">
-        {/* Limit up to 32 / default 12*/}
-        <Button title="Load more..." />
+      {/* Product not found to show*/}
+      {!products.length && (
+        <div className="flex items-center h-full justify-center mt-[25vh] flex-col">
+          <span className="text-3xl text-primary font-bold">404</span>
+          <span className="text-xl">Product not found !</span>
+        </div>
+      )}
+      {/* Product not found to hidden */}
+      <div
+        className={`flex justify-center items-center ${
+          !products.length && "hidden"
+        }`}
+      >
         {/* Pagination */}
-        <Pagination />
+        <Pagination limit={limit} page={page} total={total} />
       </div>
     </div>
   );
 }
 
 export default Shop;
+
+const breadcrumb = [
+  {
+    title: "Home",
+    icon: <IconHome />,
+    pathname: "/",
+  },
+  {
+    title: "Products",
+    icon: null,
+    pathname: null,
+  },
+];

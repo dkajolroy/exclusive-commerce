@@ -1,4 +1,4 @@
-import { brandLinks } from "@/utils/default_config";
+import { brandLinks } from "@/constants/default_config";
 import Link from "next/link";
 import {
   IconBxlFacebook,

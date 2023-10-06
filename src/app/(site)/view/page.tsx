@@ -4,6 +4,7 @@ import SectionLabel from "@/components/global/sectionlabel";
 import Product from "@/components/product";
 import ImageView from "@/components/view_product/imageView";
 import ProductInfo from "@/components/view_product/productInfo";
+import { getProductSSR } from "@/hooks/getProduct";
 import { products } from "../../../constants/dummy";
 const breadcrumb = [
   {
@@ -19,7 +20,10 @@ const breadcrumb = [
 ];
 async function View({ searchParams }: { searchParams: { product?: string } }) {
   //  find product by view id
-  const product = products.find((p) => p.id === searchParams.product);
+  // get SSR data with pagination
+  var url = `${process.env.NEXTAUTH_URL}/api/product?id=${searchParams.product}`;
+  const { product } = await getProductSSR(url);
+
   //  Render not found
   if (!searchParams.product || !product) {
     return (

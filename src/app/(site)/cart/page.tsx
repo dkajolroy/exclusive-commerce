@@ -3,7 +3,8 @@ import Breadcrumb from "@/components/global/breadcrumb";
 import Button from "@/components/global/button";
 import TextInput from "@/components/global/textInput";
 import CartItem from "@/components/pages/cart/cartItem";
-import { products } from "@/constants/dummy";
+import { getCartListSSG } from "@/hooks/getCartList";
+import Link from "next/link";
 const breadcrumb = [
   {
     title: "Home",
@@ -16,12 +17,17 @@ const breadcrumb = [
     pathname: null,
   },
 ];
-function Cart() {
+async function Cart() {
+  // SSR
+  const url = `${process.env.NEXTAUTH_URL}/api/cart`;
+  const { cartList } = await getCartListSSG(url);
+
   return (
     <div className="container mb-20  min-h-screen">
       <div className="py-10">
         <Breadcrumb crumb={breadcrumb} />
       </div>
+
       <div>
         {/* Heading */}
         <ul className="grid grid-cols-5 p-4 items-center">
@@ -30,8 +36,13 @@ function Cart() {
           <li className="col-span-1 text-sm">Quality</li>
           <li className="col-span-1 text-sm">Subtotal</li>
         </ul>
+        {!cartList.length && (
+          <div className="my-20 flex items-center justify-center">
+            <span className="text-primary text-xl font-bold">Empty Cart</span>
+          </div>
+        )}
         {/* Product */}
-        {products.map((item, index) => (
+        {cartList.map((item, index) => (
           <CartItem item={item} key={index} />
         ))}
 
@@ -75,7 +86,12 @@ function Cart() {
                 </div>
               </div>
               <div className="flex justify-center">
-                <Button title="Process to checkout" />
+                <Link
+                  href="/checkout"
+                  className={`text-white border border-gray-300 bg-primary md:px-8 px-3 rounded hover:brightness-90 transition-all text-xs py-2 md:py-3 focus:outline-none`}
+                >
+                  <span>Process to checkout</span>
+                </Link>
               </div>
             </div>
           </div>

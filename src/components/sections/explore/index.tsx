@@ -1,10 +1,14 @@
 import SectionHeading from "@/components/global/section_Heading";
 import SectionLabel from "@/components/global/sectionlabel";
 import Product from "@/components/product";
-import { products } from "@/constants/dummy";
+import { getProducts } from "@/hooks/getProducts";
 import Link from "next/link";
 
-function Explore() {
+async function Explore() {
+  // Get SSR Products
+  const url = `${process.env.NEXTAUTH_URL}/api/products`; // change sale type
+  const { products } = await getProducts(url);
+
   return (
     <div className="container py-10">
       <div className="py-5 flex flex-col gap-4">

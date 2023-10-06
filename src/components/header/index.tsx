@@ -1,3 +1,4 @@
+import { brandInfo } from "@/constants/default_config";
 import Link from "next/link";
 import { ArrowRightIcon } from "../assets/menuIcons";
 import ListGroup from "../sections/hero/listgroup";
@@ -16,7 +17,7 @@ function Header() {
           <div className="max-w-screen-xl flex flex-wrap items-center justify-between mx-auto py-4">
             <Link href="/" className="flex items-center">
               <span className="self-center text-2xl font-semibold whitespace-nowrap dark:text-white">
-                Exclusive
+                {brandInfo.brandName}
               </span>
             </Link>
             <div className="flex md:order-2 justify-between md:mt-2 md:w-full lg:w-auto gap-7 items-center flex-wrap ">

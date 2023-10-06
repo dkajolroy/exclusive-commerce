@@ -1,4 +1,4 @@
-import { brandInfo } from "@/utils/default_config";
+import { brandInfo } from "@/constants/default_config";
 import ListFive from "./listFive";
 import ListFour from "./listFour";
 import ListOne from "./listOne";
