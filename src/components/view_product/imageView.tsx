@@ -6,8 +6,8 @@ import ImageFade from "../global/imageFade";
 function ImageView({ item }: { item: Product }) {
   const [activeImage, setActiveImage] = useState(item.images[0]);
   return (
-    <div className="flex gap-5 h-full">
-      <ul className="w-32 flex flex-col gap-2 h-full">
+    <div className="flex md:flex-row flex-col gap-5 h-full">
+      <ul className="md:w-32 w-full flex md:flex-col flex-row gap-2 md:h-full md:order-1 order-2">
         {item.images.slice(0, 4).map((x, i) => (
           <li onClick={() => setActiveImage(x)} key={i}>
             <ImageFade
@@ -21,7 +21,7 @@ function ImageView({ item }: { item: Product }) {
           </li>
         ))}
       </ul>
-      <div className="w-[calc(100%-8rem)] overflow-hidden cursor-pointer h-full bg-gray-200 rounded">
+      <div className="md:order-2 order-1 w-full h-80 md:h-full md:w-[calc(100%-8rem)] overflow-hidden cursor-pointer bg-gray-200 rounded">
         <Zoom
           height="100%"
           width="100%"

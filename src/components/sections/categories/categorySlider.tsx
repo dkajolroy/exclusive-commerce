@@ -1,5 +1,7 @@
 "use client";
 import CarouselSlide, { ResponsiveType } from "react-multi-carousel";
+import CategorySlideItem from "@/components/sections/categories/categorySlideItem";
+import CustomArrowButton from "@/components/global/CustomArrowButton";
 
 function FlashSlider({ subcategories }: { subcategories: Subcategory[] }) {
   return (
@@ -17,7 +19,8 @@ function FlashSlider({ subcategories }: { subcategories: Subcategory[] }) {
       minimumTouchDrag={80}
       pauseOnHover
       renderArrowsWhenDisabled={false}
-      renderButtonGroupOutside={false}
+      renderButtonGroupOutside={true}
+      customButtonGroup={<CustomArrowButton  />}
       renderDotsOutside={false}
       rewind={false}
       rewindWithAnimation={false}
@@ -34,15 +37,7 @@ function FlashSlider({ subcategories }: { subcategories: Subcategory[] }) {
       deviceType={"desktop"}
     >
       {subcategories.map((item, index) => (
-        <div
-          key={index}
-          className="border flex  items-center  group/subcategory_b gap-2 md:gap-5 justify-center flex-col cursor-pointer hover:bg-primary bg-white hover:text-white transition-all rounded md:p-5 p-2"
-        >
-          <span className="text-5xl">
-            <i className={item.icon}></i>
-          </span>
-          <h2 className="text-center font-medium md:text-base text-sm">{item.name}</h2>
-        </div>
+       <CategorySlideItem item={item} key={index}/>
       ))}
     </CarouselSlide>
   );

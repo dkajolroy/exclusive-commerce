@@ -23,7 +23,7 @@ function Footer() {
         </div>
         <div className="py-6 border-t border-gray-600 flex items-center justify-center">
           {/* Copyright */}
-          <span className=" text-sm text-gray-500 text-center dark:text-gray-700">
+          <span className=" text-xs md:text-sm text-gray-500 text-center dark:text-gray-700">
             © Copyright {brandInfo.brandName} {new Date().getFullYear()}. All
             right reserved
           </span>

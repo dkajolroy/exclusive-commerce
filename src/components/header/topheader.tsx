@@ -4,17 +4,17 @@ function TopHeader() {
     <div className="bg-black  dark:bg-white">
       <div className="container">
         <div className="flex items-center ">
-          <div className="w-full mx-auto max-w-screen-xl py-3 md:flex md:items-center md:justify-between">
-            <span className="sm:text-sm text-xs text-gray-300 sm:text-center dark:text-gray-500">
-              Summer Sale For All Swim Suits And Free Express Delivery - OFF
-              50%!
-              <Link
+          <div className="w-full mx-auto max-w-screen-xl py-1 md:py-3 md:flex md:items-center gap-1">
+            <span className="sm:text-sm text-xs text-gray-300 hidden md:block sm:text-center dark:text-gray-500">
+              Summer Sale For All Swim Suits And Free Express Delivery -
+            </span>
+            <span className="sm:text-sm text-xs text-gray-300 sm:text-center dark:text-gray-500">OFF - 50%!</span>
+            <Link
                 href="/shop"
-                className="hover:underline ms-2 underline font-bold"
+                className="sm:text-sm text-xs text-gray-300 sm:text-center dark:text-gray-500 hover:underline ms-2 underline font-bold"
               >
                 ShopNow
               </Link>
-            </span>
           </div>
           <div>
             <select

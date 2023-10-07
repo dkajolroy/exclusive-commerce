@@ -1,12 +1,15 @@
 "use client";
 import Product from "@/components/product";
 import CarouselSlide, { ResponsiveType } from "react-multi-carousel";
+import CustomArrowButton from "@/components/global/CustomArrowButton";
 
 function FlashSlider({ products }: { products: Product[] }) {
   return (
     <CarouselSlide
       additionalTransfrom={0}
       arrows={false}
+      renderButtonGroupOutside={true}
+      customButtonGroup={<CustomArrowButton  />}
       autoPlay
       autoPlaySpeed={5000}
       centerMode={false}
@@ -18,7 +21,6 @@ function FlashSlider({ products }: { products: Product[] }) {
       minimumTouchDrag={80}
       pauseOnHover
       renderArrowsWhenDisabled={false}
-      renderButtonGroupOutside={false}
       renderDotsOutside={false}
       rewind={false}
       rewindWithAnimation={false}

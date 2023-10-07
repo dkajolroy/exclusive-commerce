@@ -13,7 +13,7 @@ function SectionHeading({
     <>
       <div className="flex flex-wrap justify-between items-center">
         <div className="flex items-center gap-20">
-          <h2 className="md:text-3xl text-2xl font-bold">{title}</h2>
+          <h2 className="md:text-3xl text-[22px] font-bold">{title}</h2>
           {subItem && <div className=" md:block hidden">{subItem}</div>}
         </div>
         <div className="flex justify-end">{children}</div>

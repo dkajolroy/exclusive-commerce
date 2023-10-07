@@ -1,4 +1,3 @@
-import { IconArrowLeft, IconArrowRight } from "@/components/assets/menuIcons";
 import SectionHeading from "@/components/global/section_Heading";
 import SectionLabel from "@/components/global/sectionlabel";
 import { getProducts } from "@/hooks/getProducts";
@@ -11,26 +10,11 @@ async function FlashSale() {
   const { products } = await getProducts(url);
   return (
     <>
-      <div className="container py-10 border-b">
-        <div className="flex py-5 flex-col gap-4">
+      <div className="container py-10 border-b relative">
+        <div className="flex py-5 flex-col gap-4 ">
           <SectionLabel label="Today's" />
           {/* Section Heading */}
-          <SectionHeading title="Flash Sales" subItem={<CountdownTimer />}>
-            <div className="flex items-center gap-1 md:gap-2">
-              <button
-                type="button"
-                className="swiper-flash-prev text-black bg-gray-300 hover:bg-gray-400 focus:ring-4 focus:outline-none focus:ring-gray-300 font-medium rounded-full p-2 md:p-2.5 text-center flex items-center"
-              >
-                <IconArrowLeft />
-              </button>
-              <button
-                type="button"
-                className="swiper-flash-next text-black bg-gray-300 hover:bg-gray-400 focus:ring-4 focus:outline-none focus:ring-gray-300 font-medium rounded-full p-2 md:p-2.5 text-center flex items-center"
-              >
-                <IconArrowRight />
-              </button>
-            </div>
-          </SectionHeading>
+          <SectionHeading title="Flash Sales" subItem={<CountdownTimer />}/>
         </div>
         {/* Product List */}
         <div className="py-5">
