@@ -8,7 +8,7 @@ function BestSaleSlider({ products }: { products: Product[] }) {
       additionalTransfrom={0}
       arrows={false}
       autoPlay
-      autoPlaySpeed={5000}
+      autoPlaySpeed={3000}
       centerMode={false}
       containerClass="relative"
       dotListClass="p-5"

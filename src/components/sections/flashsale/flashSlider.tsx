@@ -11,7 +11,7 @@ function FlashSlider({ products }: { products: Product[] }) {
       renderButtonGroupOutside={true}
       customButtonGroup={<CustomArrowButton  />}
       autoPlay
-      autoPlaySpeed={5000}
+      autoPlaySpeed={3000}
       centerMode={false}
       containerClass="relative"
       dotListClass="p-5"

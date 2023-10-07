@@ -59,8 +59,8 @@ function AccountDialog() {
           </Link>
         </li>
       </ul>
-      <div className="py-1">
-        <button className="gap-2 flex items-center px-4 py-2 text-white text-sm  hover:bg-[#00000040] mx-2 rounded ">
+      <div className="py-1 px-2">
+        <button className="gap-2 w-full flex items-center px-4 py-2 text-white text-sm  hover:bg-[#00000040] rounded ">
           <span className="text-xl rotate-180">
             <IconLogOut />
           </span>

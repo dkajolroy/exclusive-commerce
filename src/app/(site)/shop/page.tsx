@@ -3,11 +3,13 @@ import Breadcrumb from "@/components/global/breadcrumb";
 import Pagination from "@/components/global/pagination";
 import Product from "@/components/product";
 import { getProducts } from "@/hooks/getProducts";
+import Sort from "@/components/pages/shop/short";
 
 interface Props {
   searchParams: {
     limit?: string;
     page?: string;
+    search?: string;
   };
 }
 async function Shop({ searchParams }: Props) {
@@ -17,12 +19,13 @@ async function Shop({ searchParams }: Props) {
       ? 16
       : parseInt(searchParams.limit || "16");
   // Current pages
-  const page = parseInt(searchParams.page || "1");
-
+    const page = parseInt(searchParams.page || "1");
+  //   search
+    const search = searchParams.search
   // get SSR data with pagination
-  var url = `${process.env.NEXTAUTH_URL}/api/products?limit=${
+  let url = `${process.env.NEXTAUTH_URL}/api/products?limit=${
     limit || 16
-  }&page=${page || 1}`;
+  }&page=${page || 1}&search=${search||""}`;
 
   // SSR Get Data
   const { products, total } = await getProducts(url);
@@ -34,16 +37,7 @@ async function Shop({ searchParams }: Props) {
         <div>
           <h2 className="text-xl">All Products</h2>
         </div>
-        <select
-          name="language"
-          defaultValue="relevant"
-          className=" text-sm bg-gray-200 cursor-pointer hover:bg-gray-300 dark:text-gray-900  focus:outline-none rounded-lg focus:ring-blue-500 focus:border-blue-500 block  p-2  dark:focus:ring-blue-500 dark:focus:border-blue-500"
-        >
-          <option value="relevant">Relevant </option>
-          <option value="new">New </option>
-          <option value="p-lth">Price {`(Low to High)`}</option>
-          <option value="p-htl">Price {`(High to Low)`}</option>
-        </select>
+       <Sort/>
       </div>
       {/* Product List */}
       <div className="grid lg:grid-cols-4 md:grid-cols-3 grid-cols-2 py-2 md:gap-5 gap-3">
@@ -66,7 +60,7 @@ async function Shop({ searchParams }: Props) {
       {/* Product not found to hidden */}
       <div
         className={`flex justify-center items-center ${
-          !products.length && "hidden"
+          !products.length || search && "hidden"
         }`}
       >
         {/* Pagination */}
