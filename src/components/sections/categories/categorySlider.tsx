@@ -9,7 +9,7 @@ function FlashSlider({ subcategories }: { subcategories: Subcategory[] }) {
       autoPlay
       autoPlaySpeed={5000}
       centerMode={false}
-      containerClass="lg:pt-8 lg:ms-8 relative"
+      containerClass="relative"
       dotListClass="p-5"
       focusOnSelect={false}
       infinite
@@ -41,7 +41,7 @@ function FlashSlider({ subcategories }: { subcategories: Subcategory[] }) {
           <span className="text-5xl">
             <i className={item.icon}></i>
           </span>
-          <h2 className="text-center font-medium">{item.name}</h2>
+          <h2 className="text-center font-medium md:text-base text-sm">{item.name}</h2>
         </div>
       ))}
     </CarouselSlide>
@@ -54,21 +54,21 @@ const responsive: ResponsiveType = {
   desktop: {
     breakpoint: {
       max: 3000,
-      min: 1024,
+      min: 1280,
     },
     items: 6,
   },
   mobile: {
     breakpoint: {
-      max: 464,
+      max: 720,
       min: 0,
     },
     items: 2,
   },
   tablet: {
     breakpoint: {
-      max: 1024,
-      min: 464,
+      max: 1280,
+      min: 720,
     },
     items: 4,
   },

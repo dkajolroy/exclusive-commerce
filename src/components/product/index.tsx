@@ -22,7 +22,7 @@ function Product({
       <div className="relative group/product">
         <Link href={{ pathname: "view", query: { product: item.id } }}>
           <ImageFade
-            className="w-full opacity-0 duration-500 object-cover h-40 md:h-60 rounded group-hover/product:brightness-75 transition-all"
+            className="w-full opacity-0 duration-500 object-cover h-auto rounded group-hover/product:brightness-75 transition-all"
             src={item.images[0]}
             width={300}
             height={300}
@@ -65,7 +65,7 @@ function Product({
       <div className=" pb-5">
         {/* Title */}
         <Link href={{ pathname: "view", query: { product: item.id } }}>
-          <h5 className=" font-semibold tracking-tight text-gray-900 dark:text-white">
+          <h5 className="font-semibold md:text-base text-sm tracking-tight text-gray-900 dark:text-white">
             {item.title.length > 20
               ? `${item.title.slice(0, 32)}...`
               : item.title}

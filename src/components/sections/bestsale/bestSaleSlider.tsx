@@ -10,7 +10,7 @@ function BestSaleSlider({ products }: { products: Product[] }) {
       autoPlay
       autoPlaySpeed={5000}
       centerMode={false}
-      containerClass="lg:pt-8 lg:ms-8 relative"
+      containerClass="relative"
       dotListClass="p-5"
       focusOnSelect={false}
       infinite
@@ -49,24 +49,25 @@ function BestSaleSlider({ products }: { products: Product[] }) {
 export default BestSaleSlider;
 
 const responsive: ResponsiveType = {
+
   desktop: {
     breakpoint: {
       max: 3000,
-      min: 1024,
+      min: 960,
     },
     items: 4,
   },
   mobile: {
     breakpoint: {
-      max: 464,
+      max: 720,
       min: 0,
     },
     items: 2,
   },
   tablet: {
     breakpoint: {
-      max: 1024,
-      min: 464,
+      max: 960,
+      min: 720,
     },
     items: 3,
   },

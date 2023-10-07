@@ -15,12 +15,14 @@ async function Explore() {
         <SectionLabel label="Our Products" />
         {/* Section Heading */}
         <SectionHeading title="Explore Our Products">
-          <Link
-            className={` text-white border border-gray-300 bg-primary md:px-8 px-3 rounded hover:brightness-90 transition-all text-xs py-2 md:py-3 focus:outline-none`}
-            href="/shop"
-          >
-            View All
-          </Link>
+          <div className="flex items-center gap-1 md:gap-2">
+              <Link
+                  className={` text-white border border-gray-300 bg-primary md:px-8 px-3 rounded hover:brightness-90 transition-all text-xs py-2 md:py-3 focus:outline-none`}
+                  href="/shop"
+              >
+                  View More
+              </Link>
+          </div>
         </SectionHeading>
       </div>
       {/* Product List */}
@@ -33,6 +35,14 @@ async function Explore() {
             showPercentage={true}
           />
         ))}
+      </div>
+      <div className="flex justify-center">
+        <Link
+          className={` text-white border border-gray-300 bg-primary md:px-8 px-3 rounded hover:brightness-90 transition-all text-xs py-2 md:py-3 focus:outline-none`}
+          href="/shop"
+        >
+          View All Products
+        </Link>
       </div>
     </div>
   );

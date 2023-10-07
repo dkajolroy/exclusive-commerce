@@ -5,6 +5,7 @@ import { Inter } from "next/font/google";
 import NextTopLoader from "nextjs-toploader";
 import "react-multi-carousel/lib/styles.css";
 import "./globals.css";
+import ReduxProvider from "@/providers/ReduxProvider";
 const inter = Inter({
   subsets: ["latin"],
   weight: ["200", "300", "400", "500", "600", "700"],
@@ -33,7 +34,9 @@ export default function RootLayout({
           easing="ease"
           speed={200}
         />
+        <ReduxProvider>
         <SessionProvider>{children}</SessionProvider>
+        </ReduxProvider>
       </body>
     </html>
   );

@@ -13,13 +13,13 @@
   width: 12px;
   height: 12px;
   background-color: gray !important;
-  border:1px solid transparent
+  border:1px solid transparent !important
 }
 .react-multi-carousel-dot--active button{
   width: 14px;
   height: 14px;
   background-color: #db4444 !important;
-  border: 2px solid white;
+  border: 2px solid white!important
 }
 
 

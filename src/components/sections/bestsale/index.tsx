@@ -1,7 +1,7 @@
-import { IconArrowLeft, IconArrowRight } from "@/components/assets/menuIcons";
 import SectionHeading from "@/components/global/section_Heading";
 import SectionLabel from "@/components/global/sectionlabel";
 import { getProducts } from "@/hooks/getProducts";
+import Link from "next/link";
 import BestSaleSlider from "./bestSaleSlider";
 
 async function BestSales() {
@@ -14,20 +14,12 @@ async function BestSales() {
         <SectionLabel label="This Month" />
         {/* Section Heading */}
         <SectionHeading title="Best Selling Products ">
-          <div className="flex items-center gap-1 md:gap-2">
-            <button
-              type="button"
-              className="swiper-best-prev text-black bg-gray-300 hover:bg-gray-400 focus:ring-4 focus:outline-none focus:ring-gray-300 font-medium rounded-full p-2 md:p-2.5 text-center flex items-center"
-            >
-              <IconArrowLeft />
-            </button>
-            <button
-              type="button"
-              className="swiper-best-next text-black bg-gray-300 hover:bg-gray-400 focus:ring-4 focus:outline-none focus:ring-gray-300 font-medium rounded-full p-2 md:p-2.5 text-center flex items-center"
-            >
-              <IconArrowRight />
-            </button>
-          </div>
+          <Link
+            className={` text-white border border-gray-300 bg-primary md:px-8 px-3 rounded hover:brightness-90 transition-all text-xs py-2 md:py-3 focus:outline-none`}
+            href="/shop"
+          >
+            View All
+          </Link>
         </SectionHeading>
       </div>
       {/* Product List */}

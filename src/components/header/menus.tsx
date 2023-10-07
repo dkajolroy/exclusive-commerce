@@ -3,12 +3,15 @@ import { menus } from "@/constants/data";
 import Link from "next/link";
 import { usePathname } from "next/navigation";
 import MobileSearch from "./mobilesearch";
+import {useSelector} from "react-redux";
+import {RootState} from "@/store/store";
 function Menus() {
   const pathname = usePathname();
+  const {mobileMenu} = useSelector((s:RootState)=>s.toggleState)
   return (
     <>
       <div
-        className="items-center justify-between  w-full md:flex md:w-auto md:order-1"
+        className={`${!mobileMenu&&"hidden"} items-center justify-between w-full md:flex md:w-auto md:order-1`}
         id="navbar-search"
       >
         <MobileSearch />
@@ -29,10 +32,10 @@ function Menus() {
             </li>
           ))}
           {/* Categories */}
-          <li>
+          <li className="block md:hidden">
             <Link
               href="/"
-              className={`block md:hidden relative hover:after:scale-100 ${
+              className={` relative hover:after:scale-100 ${
                 pathname === "/categories"
                   ? "md:after:scale-100 after:scale-0 bg-gray-300  md:bg-inherit"
                   : "after:scale-0"

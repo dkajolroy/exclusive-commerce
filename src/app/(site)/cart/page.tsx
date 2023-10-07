@@ -3,7 +3,6 @@ import Breadcrumb from "@/components/global/breadcrumb";
 import Button from "@/components/global/button";
 import TextInput from "@/components/global/textInput";
 import CartItem from "@/components/pages/cart/cartItem";
-import { getCartListSSG } from "@/hooks/getCartList";
 import Link from "next/link";
 const breadcrumb = [
   {
@@ -18,10 +17,8 @@ const breadcrumb = [
   },
 ];
 async function Cart() {
-  // SSR
-  const url = `${process.env.NEXTAUTH_URL}/api/cart`;
-  const { cartList } = await getCartListSSG(url);
 
+  const cartList:CartList[]=[]
   return (
     <div className="container mb-20  min-h-screen">
       <div className="py-10">
