@@ -85,7 +85,7 @@ function RegisterForm() {
           </span>
           <Link
             className="font-medium text-sm hover:text-gray-600 underline text-black"
-            href={`/auth/signin?${callbackUrl || ""}`}
+            href={`/auth/signin?callbackUrl=${callbackUrl || ""}`}
           >
             Login in
           </Link>

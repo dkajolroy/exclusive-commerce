@@ -5,10 +5,11 @@ interface CartRes {
   cartList: CartList[];
   message: string;
 }
+
 export const cartItemsApi = createApi({
   reducerPath: "cartListApi",
   tagTypes: ["Post"],
-  baseQuery: fetchBaseQuery({ baseUrl: "http://localhost:3000/" }),
+  baseQuery: fetchBaseQuery({ baseUrl: process.env.NEXTAUTH_URL }), // test Next URL or "/"
   endpoints: (builder) => ({
     getCartItems: builder.query<CartRes, undefined>({
       query: () => ({

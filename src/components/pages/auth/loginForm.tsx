@@ -1,5 +1,6 @@
 "use client";
 import Button from "@/components/global/button";
+import { brandInfo } from "@/constants/default_config";
 import { signIn } from "next-auth/react";
 import Link from "next/link";
 import { useSearchParams } from "next/navigation";
@@ -34,7 +35,7 @@ function LoginForm() {
   return (
     <div className="flex flex-col gap-5 xl:px-10 ">
       <div>
-        <h2 className="text-black text-3xl">Log in to Exclusive</h2>
+        <h2 className="text-black text-3xl">Log in to {brandInfo.brandName}</h2>
         <span className="text-xs font-medium text-black">
           Enter your details below
         </span>
@@ -83,7 +84,7 @@ function LoginForm() {
         <span className="text-xs text-gray-600">Already have an account ?</span>
         <Link
           className="font-medium text-sm hover:text-gray-600 underline text-black"
-          href={`/auth/signin?${callbackUrl || ""}`}
+          href={`/auth/signup?callbackUrl=${callbackUrl || ""}`}
         >
           Register
         </Link>
