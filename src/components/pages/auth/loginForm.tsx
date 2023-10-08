@@ -84,7 +84,9 @@ function LoginForm() {
         <span className="text-xs text-gray-600">Already have an account ?</span>
         <Link
           className="font-medium text-sm hover:text-gray-600 underline text-black"
-          href={`/auth/signup?callbackUrl=${callbackUrl || ""}`}
+          href={`/auth/signup${
+            callbackUrl ? "?callbackUrl=" + callbackUrl : ""
+          }`}
         >
           Register
         </Link>
