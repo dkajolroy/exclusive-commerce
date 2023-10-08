@@ -34,12 +34,5 @@ export default withAuth(
 );
 
 export const config = {
-  matcher: [
-    "/cart",
-    "/account",
-    "/wishlist",
-    "/dashboard/:path*",
-    "/checkout",
-    "/auth/:path*",
-  ],
+  matcher: ["/cart"],
 };
