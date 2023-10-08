@@ -1,11 +1,12 @@
+import ReduxProvider from "@/providers/ReduxProvider";
 import SessionProvider from "@/providers/sessionProvider";
 import "@flaticon/flaticon-uicons/css/regular/all.css";
 import type { Metadata } from "next";
 import { Inter } from "next/font/google";
 import NextTopLoader from "nextjs-toploader";
 import "react-multi-carousel/lib/styles.css";
+import "react-toastify/dist/ReactToastify.css";
 import "./globals.css";
-import ReduxProvider from "@/providers/ReduxProvider";
 const inter = Inter({
   subsets: ["latin"],
   weight: ["200", "300", "400", "500", "600", "700"],
@@ -35,7 +36,7 @@ export default function RootLayout({
           speed={200}
         />
         <ReduxProvider>
-        <SessionProvider>{children}</SessionProvider>
+          <SessionProvider>{children}</SessionProvider>
         </ReduxProvider>
       </body>
     </html>

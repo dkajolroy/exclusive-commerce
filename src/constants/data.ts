@@ -12,7 +12,7 @@ export const menus = [
     pathname: "/about",
   },
   {
-    name: "Sign Up",
-    pathname: "/signup",
+    name: "Sign In",
+    pathname: "/auth/signin",
   },
 ];
