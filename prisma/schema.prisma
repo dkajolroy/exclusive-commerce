@@ -87,6 +87,8 @@ model Product {
   deliveryFee     Int         @default(0)
   cartList        CartList[]
   wishlist        Wishlist[]
+  colors          String[]
+  sizes           String[]
   created_at      DateTime    @default(now())
   updated_at      DateTime    @updatedAt
 }
@@ -133,6 +135,8 @@ model CartList {
   product_id String   @db.ObjectId
   product    Product  @relation(fields: [product_id], references: [id])
   quantity   Int      @default(1)
+  color      String?
+  size       String?
   user_id    String   @db.ObjectId
   user       User     @relation(fields: [user_id], references: [id])
   created_at DateTime @default(now())

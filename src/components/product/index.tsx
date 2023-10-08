@@ -59,7 +59,7 @@ function Product({
           )}
         </div>
         {/* Add to cart absolute */}
-        <AddToCartButton />
+        <AddToCartButton item={item} />
       </div>
       {/* Product information */}
       <div className=" pb-5">

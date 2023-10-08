@@ -2,23 +2,10 @@ import { IconHome } from "@/components/assets/menuIcons";
 import Breadcrumb from "@/components/global/breadcrumb";
 import Button from "@/components/global/button";
 import TextInput from "@/components/global/textInput";
-import CartItem from "@/components/pages/cart/cartItem";
+import CartList from "@/components/pages/cart/CartList";
 import Link from "next/link";
-const breadcrumb = [
-  {
-    title: "Home",
-    icon: <IconHome />,
-    pathname: "/",
-  },
-  {
-    title: "Cart",
-    icon: null,
-    pathname: null,
-  },
-];
-async function Cart() {
 
-  const cartList:CartList[]=[]
+function Cart() {
   return (
     <div className="container mb-20  min-h-screen">
       <div className="py-10">
@@ -33,15 +20,9 @@ async function Cart() {
           <li className="col-span-1 text-sm">Quality</li>
           <li className="col-span-1 text-sm">Subtotal</li>
         </ul>
-        {!cartList.length && (
-          <div className="my-20 flex items-center justify-center">
-            <span className="text-primary text-xl font-bold">Empty Cart</span>
-          </div>
-        )}
+
         {/* Product */}
-        {cartList.map((item, index) => (
-          <CartItem item={item} key={index} />
-        ))}
+        <CartList />
 
         {/* Action Go back or Sync */}
         <div className="grid gap-5 md:grid-cols-2 py-10 grid-cols-1">
@@ -49,11 +30,12 @@ async function Cart() {
           <div className="flex flex-col gap-5">
             {/* Action Go back or Sync */}
             <div>
-              <Button
-                background="bg-white"
-                textColor="text-black font-medium"
-                title="Return to Shop"
-              />
+              <Link
+                className={`text-black font-medium border bg-white border-gray-300 md:px-8 px-3 rounded hover:brightness-90 transition-all text-xs py-2 md:py-3 focus:outline-none`}
+                href="/"
+              >
+                Return to shop
+              </Link>
             </div>
             <div className="flex gap-2">
               <div>
@@ -99,3 +81,16 @@ async function Cart() {
 }
 
 export default Cart;
+
+const breadcrumb = [
+  {
+    title: "Home",
+    icon: <IconHome />,
+    pathname: "/",
+  },
+  {
+    title: "Cart",
+    icon: null,
+    pathname: null,
+  },
+];

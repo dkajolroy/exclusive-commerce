@@ -1,25 +1,31 @@
-import {createSlice} from "@reduxjs/toolkit";
+import { createApi, fetchBaseQuery } from "@reduxjs/toolkit/query/react";
 
+interface CartRes {
+  success: boolean;
+  cartList: CartList[];
+  message: string;
+}
+export const cartItemsApi = createApi({
+  reducerPath: "cartListApi",
+  tagTypes: ["Post"],
+  baseQuery: fetchBaseQuery({ baseUrl: "http://localhost:3000/" }),
+  endpoints: (builder) => ({
+    getCartItems: builder.query<CartRes, undefined>({
+      query: () => ({
+        url: "/api/cart",
+        method: "GET",
+      }),
+      providesTags: ["Post"],
+    }),
+    addToCart: builder.mutation<CartRes, InputCartItems>({
+      query: (data) => ({
+        url: "/api/cart",
+        method: "POST",
+        body: data,
+      }),
+      invalidatesTags: ["Post"],
+    }),
+  }),
+});
 
-const initialState:Product[]=[]
-  const cartSlice = createSlice({
-    name:"cart",
-    initialState,
-    reducers: {
-        addtoCart:(state,payload) =>{
-
-        },
-        removeFormCart:(state,payload) =>{
-
-        },
-        increment:(state,payload) =>{
-
-        },
-        decrement:(state,payload) =>{
-
-        }
-    }
-})
-
-export  const {increment,decrement,removeFormCart,addtoCart} = cartSlice.actions
-export  default  cartSlice.reducer
+export const { useGetCartItemsQuery, useAddToCartMutation } = cartItemsApi;
