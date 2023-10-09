@@ -7,12 +7,12 @@ export default withAuth(
   {
     callbacks: {
       authorized: ({ token, req }) => {
-        if (req.nextUrl.pathname.startsWith("/auth")) return true;
+        // if (req.nextUrl.pathname.startsWith("/auth")) return true;
         return !!token;
       },
     },
   }
 );
 export const config = {
-  matcher: ["/cart", "/dashboard/:path*", "/auth/:path*"],
+  matcher: ["/cart", "/dashboard/:path*"],
 };
