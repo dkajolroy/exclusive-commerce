@@ -7,6 +7,21 @@ import { prisma } from "./prisma";
 
 export const authOption: NextAuthOptions = {
   adapter: PrismaAdapter(prisma),
+  session: {
+    strategy: "jwt",
+  },
+  secret: process.env.NEXTAUTH_SECRET,
+  pages: {
+    signIn: "/auth/signin",
+  },
+  callbacks: {
+    async jwt({ token, user }) {
+      return token;
+    },
+    async session({ session, token, user }) {
+      return session;
+    },
+  },
   providers: [
     CredentialProvider({
       credentials: {
@@ -45,11 +60,4 @@ export const authOption: NextAuthOptions = {
       clientSecret: process.env.GOOGLE_CLIENT_SECRET as string,
     }),
   ],
-  session: {
-    strategy: "jwt",
-  },
-  secret: process.env.NEXTAUTH_SECRET,
-  pages: {
-    signIn: "/auth/signin",
-  },
 };
