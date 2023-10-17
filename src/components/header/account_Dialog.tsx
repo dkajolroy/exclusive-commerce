@@ -1,9 +1,16 @@
+"use client";
+import { signOut, useSession } from "next-auth/react";
 import Link from "next/link";
 import { IconStar } from "../assets/productIcons";
-import { IconCloseO, IconHandbag, IconUser } from "../assets/userIcons";
-import SignOutButton from "./signOutButton";
+import {
+  IconCloseO,
+  IconHandbag,
+  IconLogOut,
+  IconUser,
+} from "../assets/userIcons";
 
 function AccountDialog() {
+  const { status } = useSession();
   return (
     <>
       <ul
@@ -56,7 +63,27 @@ function AccountDialog() {
         </li>
       </ul>
       <div className="py-1 px-2">
-        <SignOutButton />
+        {status == "authenticated" ? (
+          <button
+            onClick={() => signOut()}
+            className="gap-2 w-full flex items-center px-4 py-2 text-white text-sm  hover:bg-[#00000040] rounded "
+          >
+            <span className="text-xl rotate-180">
+              <IconLogOut />
+            </span>
+            <span>Sign out</span>
+          </button>
+        ) : (
+          <Link
+            href="/auth/signin"
+            className="gap-2 w-full flex items-center px-4 py-2 text-white text-sm  hover:bg-[#00000040] rounded "
+          >
+            <span className="text-xl">
+              <IconUser />
+            </span>
+            <span>Sign in</span>
+          </Link>
+        )}
       </div>
     </>
   );

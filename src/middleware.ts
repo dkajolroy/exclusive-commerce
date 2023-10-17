@@ -7,7 +7,12 @@ export default withAuth(
     const { token } = req.nextauth;
     // already authenticated to redirect home from login page
     if (pathname.startsWith("/auth") && token) {
-      NextResponse.redirect(new URL("/", origin));
+      return NextResponse.redirect(new URL("/", origin));
+    }
+
+    // Dashboard protected routes
+    if (pathname.startsWith("/dashboard") && token?.role !== "admin") {
+      return NextResponse.redirect(new URL("/", origin));
     }
   },
   {
@@ -20,5 +25,11 @@ export default withAuth(
   }
 );
 export const config = {
-  matcher: ["/cart", "/auth/:path*", "/dashboard/:path*"],
+  matcher: [
+    "/cart",
+    "/wishlist",
+    "/account/:path*",
+    "/auth/:path*",
+    "/dashboard/:path*",
+  ],
 };

@@ -38,6 +38,8 @@ model User {
   phoneVerified DateTime?
   password      String?
   image         String?
+  address       String?
+  role          Role       @default(user)
   account       Account[]
   reviews       Review[]
   wishlist      Wishlist[]
@@ -90,6 +92,11 @@ model Product {
   sizes           String[]
   created_at      DateTime    @default(now())
   updated_at      DateTime    @updatedAt
+}
+
+enum Role {
+  user
+  admin
 }
 
 enum Sales {

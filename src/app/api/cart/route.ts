@@ -1,10 +1,23 @@
+import { authOption } from "@/config/authOption";
 import { prisma } from "@/config/prisma";
+import { getServerSession } from "next-auth";
 import { NextRequest, NextResponse } from "next/server";
 
 export async function GET(req: NextRequest) {
+  const session = await getServerSession(authOption);
   try {
+    if (!session) {
+      return NextResponse.json({
+        cartList: [],
+        success: false,
+        message: "User not authenticate !",
+      });
+    }
     const response = await prisma.cartList.findMany({
       include: { product: true },
+      where: {
+        user_id: session.user?.id,
+      },
     });
     return NextResponse.json({
       success: true,
@@ -15,7 +28,7 @@ export async function GET(req: NextRequest) {
     return NextResponse.json(
       {
         success: false,
-        products: [],
+        cartList: [],
         message: "Something went wrong !",
       },
       { status: 400 }
@@ -46,7 +59,7 @@ export async function POST(req: NextRequest) {
         {
           success: false,
           products: [],
-          message: "Invalid cart items info !",
+          message: "Product is already in the cart !",
         },
         { status: 400 }
       );

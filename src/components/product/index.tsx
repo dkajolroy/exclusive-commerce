@@ -48,7 +48,7 @@ function Product({
             <WishlistDeleteButton />
           ) : (
             <div className="gap-2 p-2 flex flex-col">
-              <AddToWishlistButton />
+              <AddToWishlistButton item={item} />
               <Link
                 href={{ pathname: "view", query: { product: item.id } }}
                 className="text-gray-500 bg-white hover:bg-gray-300 rounded-full p-[6px] inline-flex items-center  dark:bg-gray-600 dark:hover:bg-gray-700 "

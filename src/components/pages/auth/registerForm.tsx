@@ -1,9 +1,11 @@
 "use client";
-import Button from "@/components/global/button";
+import { CircleSpinner } from "@/components/assets/globalIcons";
+import { useRegisterUserMutation } from "@/slices/userSlice";
 import { signIn } from "next-auth/react";
 import Link from "next/link";
-import { useSearchParams } from "next/navigation";
-import { useState } from "react";
+import { useRouter, useSearchParams } from "next/navigation";
+import { useEffect, useState } from "react";
+import { toast } from "react-toastify";
 
 function RegisterForm() {
   // Store input data
@@ -16,15 +18,31 @@ function RegisterForm() {
   const searchParams = useSearchParams();
   const error = searchParams.get("error");
   const callbackUrl = searchParams.get("callbackUrl");
+  const { push } = useRouter();
+  const [registerUser, { isLoading, isSuccess }] = useRegisterUserMutation();
+
+  // Error Toast
+  useEffect(() => {
+    if (error) {
+      toast.error("Invalid form data !");
+    }
+    if (isSuccess) {
+      toast.success("Registration successfully !", {
+        autoClose: 6000,
+      });
+      push(`/auth/signin${callbackUrl ? `?callbackUrl=${callbackUrl}` : ""}`);
+    }
+  }, [error, isSuccess, isLoading]);
 
   // Registration with form data
   function registerWithFormData() {
     // axios sign in
+    registerUser(formData);
   }
 
   // Login with google
   function loginWithGoogle() {
-    signIn("google", { callbackUrl: "/" });
+    signIn("google", { callbackUrl: callbackUrl || "/" });
   }
 
   return (
@@ -72,7 +90,22 @@ function RegisterForm() {
         </li>
       </ul>
       <div className="flex flex-col gap-2">
-        <Button onClick={registerWithFormData} title="Create Account" />
+        <button
+          onClick={registerWithFormData}
+          disabled={isLoading}
+          className=" bg-primary text-white rounded hover:brightness-75 transition-all text-xs  py-3 focus:outline-none"
+        >
+          {isLoading ? (
+            <div className="flex justify-center items-center gap-2">
+              <span className="w-4 h-4  flex">
+                <CircleSpinner />
+              </span>
+              <span> Creating...</span>
+            </div>
+          ) : (
+            "Create Account"
+          )}
+        </button>
         <button
           onClick={loginWithGoogle}
           className="border border-gray-400 rounded hover:bg-gray-100 hover:border-gray-500 transition-all text-xs  py-3 focus:outline-none"

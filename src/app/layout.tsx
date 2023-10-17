@@ -1,4 +1,5 @@
 import ReduxProvider from "@/providers/ReduxProvider";
+import DataProvider from "@/providers/dataProvider";
 import SessionProvider from "@/providers/sessionProvider";
 import "@flaticon/flaticon-uicons/css/regular/all.css";
 import type { Metadata } from "next";
@@ -35,9 +36,11 @@ export default function RootLayout({
           easing="ease"
           speed={200}
         />
-        <ReduxProvider>
-          <SessionProvider>{children}</SessionProvider>
-        </ReduxProvider>
+        <SessionProvider>
+          <ReduxProvider>
+            <DataProvider>{children}</DataProvider>
+          </ReduxProvider>
+        </SessionProvider>
       </body>
     </html>
   );

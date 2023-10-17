@@ -13,8 +13,8 @@ function CartItem({ item }: { item: CartList }) {
   } else {
     const { product } = item;
     return (
-      <ul className="grid grid-cols-5 p-4 hover:bg-gray-100 rounded items-center">
-        <li className="col-span-2 ">
+      <div className="grid grid-cols-5 p-4 hover:bg-gray-100 rounded items-center">
+        <div className="md:col-span-2 col-span-5">
           <Link
             className="flex  items-center gap-2 h-full"
             href={{ pathname: "view", query: { product: product.id } }}
@@ -31,27 +31,29 @@ function CartItem({ item }: { item: CartList }) {
               {product.title}
             </h2>
           </Link>
-        </li>
-        <li className="col-span-1 text-sm">
-          <span className="text-sm">${product.regularPrice}</span>
-        </li>
-        <li className="col-span-1 text-sm">
-          <select
-            name="quantity"
-            defaultValue={1}
-            className="text-sm  text-black focus:outline-none rounded-lg  block p-2.5 border border-gray-300"
-          >
-            <option value={1}>1</option>
-            <option value={2}>2</option>
-            <option value={3}>3</option>
-            <option value={4}>4</option>
-            <option value={5}>5</option>
-          </select>
-        </li>
-        <li className="col-span-1 text-sm">
-          <span className="text-sm">${product.regularPrice}</span>
-        </li>
-      </ul>
+        </div>
+        <div className="md:col-span-3 col-span-5 items-center grid grid-cols-3  ">
+          <div className="col-span-1 text-center md:text-left text-sm">
+            <span className="text-sm">${product.regularPrice}</span>
+          </div>
+          <div className="col-span-1 flex justify-center md:justify-normal text-sm">
+            <select
+              name="quantity"
+              defaultValue={1}
+              className="text-sm  text-black focus:outline-none rounded-lg  block p-2.5 border border-gray-300"
+            >
+              <option value={1}>1</option>
+              <option value={2}>2</option>
+              <option value={3}>3</option>
+              <option value={4}>4</option>
+              <option value={5}>5</option>
+            </select>
+          </div>
+          <div className="col-span-1 text-center md:text-left text-sm">
+            <span className="text-sm">${product.regularPrice}</span>
+          </div>
+        </div>
+      </div>
     );
   }
 }

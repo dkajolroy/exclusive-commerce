@@ -57,3 +57,26 @@ interface CartList {
   created_at: string;
   updated_at: string;
 }
+
+interface Wishlist {
+  id: string;
+  product: Product;
+  product_id: string;
+  user_id: string;
+  user: User;
+  created_at: Date;
+  updated_at: Date;
+}
+interface User {
+  id: string;
+  name: string | null;
+  email: string | null;
+  emailVerified: Date | null;
+  phone: string | null;
+  phoneVerified: Date | null;
+  emptyPassword: boolean;
+  image: string | null;
+  address: string | null;
+  created_at: Date;
+  updated_at: Date;
+}
